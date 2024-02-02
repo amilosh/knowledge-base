@@ -1,0 +1,24 @@
+Generate app-0.0.1.jar file via Gradle.
+Create Dockerfile:
+  FROM openjdk:17-jdk-alpine
+  ARG JAR_FILE=build/libs/*.jar
+  COPY ./build/libs/app-0.0.1.jar app.jar
+  ENTRYPOINT ["java","-jar","/app.jar"]
+Run Docker.
+Go to folder with Dockerfile.
+Create image:
+  docker build -t app .
+    where
+      -t - tag or name of image (latest by default)
+      . - build from current position (docker will automatically find and run Dockerfile)
+Run image:
+  docker run -d -p 8000:8080 app
+  where
+    -d - dormant mode, run in the background
+    -p - ports
+    8000 - port on localhost
+    8080 - post inside docker
+
+docker images - list of images
+docker container ls - list of contaiers
+docker rm -f abc123 - force close and remove container
