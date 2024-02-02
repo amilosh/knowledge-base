@@ -1,9 +1,10 @@
 Generate app-0.0.1.jar file via Gradle.
 Create Dockerfile:
   FROM openjdk:17-jdk-alpine
+  EXPOSE 8000/tcp // dosn't publish port, just documentation, need use -p
   ARG JAR_FILE=build/libs/*.jar
-  COPY ./build/libs/app-0.0.1.jar app.jar
-  ENTRYPOINT ["java","-jar","/app.jar"]
+  COPY ./build/libs/app-0.0.1.jar app.jar // ADD is the same
+  ENTRYPOINT ["java","-jar","/app.jar"] // slash is necessary
 Run Docker.
 Go to folder with Dockerfile.
 Create image:
