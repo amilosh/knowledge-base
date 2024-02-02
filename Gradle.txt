@@ -1,0 +1,29 @@
+Gradle has a list of default tasks. You can find these tasks on Gradle tab inside Idea.
+These tasks have default behaviour.
+Task can consist of some other tasks. (e.g. bootJar: compileJava, processResources, classes, bootJarMainClassName, bootJar).
+If previous tasks was already done, Gradle doesn't run them again. Instead of it Gradle write message (e.g. compileJava UP-TO-DATE).
+
+Gradle tasks:
+bootJar
+  generates bootJarMainClassName
+  generates *.jar file
+jar
+  generates *.jar file
+
+gradle clean build - will create build/libs/{app_name}-{app_verion}.jar file
+change app_name and app_verion:
+  app_name - inside settings.gradle
+    rootProject.name = 'app'
+  app_verion - inside build.gradle
+    version = '0.0.1'
+
+gradle bootRun - run Spring Boot application from cmd
+ 
+Generate *.war file:
+  add to build.gradle:
+    plugins {
+        id 'war'
+    }
+
+Run application from *.jar file:
+  java -jar app.jar
