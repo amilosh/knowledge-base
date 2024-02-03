@@ -3,7 +3,7 @@ These tasks have default behaviour.
 Task can consist of some other tasks. (e.g. bootJar: compileJava, processResources, classes, bootJarMainClassName, bootJar).
 If previous tasks was already done, Gradle doesn't run them again. Instead of it Gradle write message (e.g. compileJava UP-TO-DATE).
 
-Gradle tasks:
+ - Gradle tasks -
 gradle tasks - list of available tasks
 bootJar
   generates bootJarMainClassName
