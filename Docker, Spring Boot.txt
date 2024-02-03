@@ -3,8 +3,8 @@ Create Dockerfile:
   FROM openjdk:17-jdk-alpine
   EXPOSE 8000/tcp // dosn't publish port, just documentation, need use -p
   ARG JAR_FILE=build/libs/*.jar
-  COPY ./build/libs/app-0.0.1.jar app.jar // ADD is the same
-  ENTRYPOINT ["java","-jar","/app.jar"] // slash is necessary
+  COPY ./build/libs/app-0.0.1.jar app.jar (or /app.jar) // ADD is the same
+  ENTRYPOINT ["java","-jar","/app.jar"] (or "app.jar")// slash is necessary
 Run Docker.
 Go to folder with Dockerfile.
 Create image:
@@ -15,11 +15,18 @@ Create image:
 Run image:
   docker run -d -p 8000:8080 app
   where
-    -d - dormant mode, run in the background
+    -d, dormant mode, run in the background
     -p - ports
     8000 - port on localhost
     8080 - post inside docker
+    -i, --interactive - go to container and show console from inside container 
+    -t, --tty - 
+    -d, --detach - run container and go back to cmd
+
+Create docker image by Spring Boot + Gradle:
+  gradle bootBuildImage
 
 docker images - list of images
 docker container ls - list of contaiers
 docker rm -f abc123 - force close and remove container
+docker exec -it {containerId} bash - go inside container to bash console

@@ -1,0 +1,8 @@
+curl - command line instrument; data transfer between servers; a lot of protocols
+  in Windows 10 - installed by default
+
+where curl
+curl --version
+curl --help / curl --help all / curl --help category
+curl https://site.com - by default: HTTPS GET
+  curl --request GET --http2 https://site.com

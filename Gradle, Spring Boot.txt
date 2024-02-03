@@ -4,6 +4,7 @@ Task can consist of some other tasks. (e.g. bootJar: compileJava, processResourc
 If previous tasks was already done, Gradle doesn't run them again. Instead of it Gradle write message (e.g. compileJava UP-TO-DATE).
 
 Gradle tasks:
+gradle tasks - list of available tasks
 bootJar
   generates bootJarMainClassName
   generates *.jar file
@@ -18,6 +19,7 @@ change app_name and app_verion:
     version = '0.0.1'
 
 gradle bootRun - run Spring Boot application from cmd
+gradle bootBuildImage - create docker image
  
 Generate *.war file:
   add to build.gradle:
@@ -27,3 +29,7 @@ Generate *.war file:
 
 Run application from *.jar file:
   java -jar app.jar
+
+ - Gradle plugins -
+id 'application' - allow to specify main class of application
+gradle shadow plugin - add main class to manifest and to jar

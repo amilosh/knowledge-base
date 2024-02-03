@@ -1,0 +1,1 @@
+git clone https://github.com/username/app.git - clone repository from github to local PC

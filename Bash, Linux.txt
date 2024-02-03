@@ -1,0 +1,6 @@
+ls -alh / ls -a -l -h - show files ad packages from current folder
+  -a, --all - do not ignore entries starting with .
+  -l - use a long listing format
+  -h, --human-readable - with -l, print sizes in human readable format
+tree - show tree of files
+cat test.txt - open file

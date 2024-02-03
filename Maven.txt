@@ -1,0 +1,17 @@
+<dependencies>
+  <dependency>
+    <optional>true</optional> - not included to dependencies while building application
+  </dependency>
+</dependencies>
+
+add docker compose to application:
+<build>
+  <plugins>
+    <plugin>
+      <artifactId>spring--boot-maven-pluin</artifactId>
+      <configuration>
+        <excludeDockerCompose>false</excludeDockerCompose>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
