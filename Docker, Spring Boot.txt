@@ -22,11 +22,35 @@ Run image:
     -i, --interactive - go to container and show console from inside container 
     -t, --tty - 
     -d, --detach - run container and go back to cmd
+    --name - name of the container
 
 Create docker image by Spring Boot + Gradle:
   gradle bootBuildImage
 
 docker images - list of images
 docker container ls - list of contaiers
+docker ps - (process status) running containers
+docker ps -a - --all - all containers
 docker rm -f abc123 - force close and remove container
 docker exec -it {containerId} bash - go inside container to bash console
+docker pull abc123 - pull docker image from hub.docker, abc123 - artifact, e.g. postresql
+docker inspect abc123
+  IPAddress
+
+Run PostgresSQL:
+docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=postgres -d -p 5432:5432 -v C:\postgres_volume:/var/lib/postgresql/data postgres:15.5
+
+ - Docker + Sprig Boot + PostgreSQL -
+a) spring on localhost, postgres on docker
+run postgres conatiner (see. #Run PostgresSQL:)
+add to application.properties:
+  spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+b) spring on docker, postgres on docker
+run postgres conatiner (see. #Run PostgresSQL:)
+docker inspect postgres
+  copy value from 'IPAddress' (e.g. 172.17.0.2)
+add to application.properties:
+  spring.datasource.url=jdbc:postgresql://172.17.0.2:5432/postgres
+create Dockerfile
+create image (docker build -t app .)
+run container (docker run -d -p 8000:8080 app)
