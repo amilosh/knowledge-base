@@ -1,3 +1,9 @@
+ - Docker properties -
+Docker desktop version: https://docs.docker.com/desktop/release-notes/
+Docker engine version: 
+  docker version
+
+ - Dockerfile, image, container, run application -
 Generate app-0.0.1.jar file via Gradle.
 Create Dockerfile:
   FROM openjdk:17-jdk-alpine
@@ -36,6 +42,7 @@ docker exec -it {containerId} bash - go inside container to bash console
 docker pull abc123 - pull docker image from hub.docker, abc123 - artifact, e.g. postresql
 docker inspect abc123
   IPAddress
+docker version - version of docker engine
 
 Run PostgresSQL:
 docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=postgres -d -p 5432:5432 -v C:\postgres_volume:/var/lib/postgresql/data postgres:15.5
@@ -54,3 +61,41 @@ add to application.properties:
 create Dockerfile
 create image (docker build -t app .)
 run container (docker run -d -p 8000:8080 app)
+c) spring + postgres by docer compose
+create Dockerfile
+create docker-compose.yml:
+-
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:54322
+
+  app:
+    build: .
+    image: app
+    container_name: app
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    ports:
+      - 8080:8080
+-
+application.properties:
+-
+spring.datasource.url=${SPRING_DATASOURCE_URL}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+-
+docker compose -f docker-compose.yaml pull
+docker compose -f docker-compose.yaml up -d
