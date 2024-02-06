@@ -19,7 +19,7 @@ Create image:
       -t - tag or name of image (latest by default)
       . - build from current position (docker will automatically find and run Dockerfile)
 Run image:
-  docker run -d -p 8000:8080 app
+  docker run --name app -d -p 8000:8080 app
   where
     -d, dormant mode, run in the background
     -p - ports
@@ -99,3 +99,34 @@ spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
 -
 docker compose -f docker-compose.yaml pull
 docker compose -f docker-compose.yaml up -d
+
+ - Docker hub -
+Push image to docker hub:
+create access token in https://hub.docker.com
+docker login -u amilosh
+Create repository in docker hub: app
+docker tag local-image:tagname new-repo:tagname (docker tag app:latest amilosh/app:latest)
+docker push new-repo:tagname (docker push amilosh/app:latest)
+
+Credentials to docker hub:
+  ~\.docker\config.json
+  a)
+  {
+      "auths": {
+          "https://index.docker.io/v1/": {}
+      },
+      "credsStore": "desktop.exe",
+      "currentContext": "default"
+  }
+    Creds are stored via Docker Desktop. Just log in to Docker Desktop.
+  b)
+  {
+      "auths": {
+          "https://index.docker.io/v1/": {
+              "auth": "dXNlcm5hbWU6cGFzc3dvcmQ="
+          }
+      },
+      "credsStore": "desktop.exe",
+      "currentContext": "default"
+  }
+    dXNlcm5hbWU6cGFzc3dvcmQ= - Base64 encoded text "username:password"
