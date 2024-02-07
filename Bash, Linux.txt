@@ -1,7 +1,24 @@
-ls -alh / ls -a -l -h - show files ad packages from current folder
+ls -alh / ls -a -l -h - show files and packages from current folder
   -a, --all - do not ignore entries starting with .
   -l - use a long listing format
   -h, --human-readable - with -l, print sizes in human readable format
 tree - show tree of files
 cat test.txt - open file
+
+su - substitute user, sitch to root user but keep current environment
+su - - substitute user, sitch to root user and environment (recommended)
+sudo -i - run some commands as root user, mirror environment
+sudo -s - run some commands as root user, while preserving your own identity
+sudo su -
+
+sudo yum install docker - install docker
+sudo service docker start
+  if: 'Redirecting to /bin/systemctl start docker.service'
+    run: sudo systemctl start docker.service && sudo systemctl enable docker.service
+  (seervice == systemctl)
+sudo systemctl status docker.service
+
+sudo systemctl stop docker.service
+sudo yum remove docker
+sudo yum autoremove
 

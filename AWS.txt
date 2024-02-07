@@ -1,0 +1,13 @@
+ - EC2 -
+EC2 - elastic compute cloud. This is Linux/Windows on virtual machine.
+AMI (Amazon machine image) - operating system (Linux/Windows) that runnig on EC2.
+Key pair (login) - keys to get acces to EC2.
+Security group - rules/policies to access to EC2 from internet.
+
+Connect to EC2 via PuTTY:
+  https://linux.how2shout.com/how-to-ssh-aws-ec2-linux-instances-remotely/
+ec2-user - default system user
+
+ - Security groups -
+Inbound rules - port that open to internet
+  Edit inbound rules -> set anywhere

@@ -38,6 +38,7 @@ docker container ls - list of contaiers
 docker ps - (process status) running containers
 docker ps -a - --all - all containers
 docker rm -f abc123 - force close and remove container
+docker image rm - remove image
 docker exec -it {containerId} bash - go inside container to bash console
 docker pull abc123 - pull docker image from hub.docker, abc123 - artifact, e.g. postresql
 docker inspect abc123
@@ -130,3 +131,15 @@ Credentials to docker hub:
       "currentContext": "default"
   }
     dXNlcm5hbWU6cGFzc3dvcmQ= - Base64 encoded text "username:password"
+
+ - Remote: AWS EC2 Amazon Linux -
+Log in to Linux as root user
+sudo yum install docker
+sudo systemctl start docker.service && sudo systemctl enable docker.service
+sudo systemctl status docker.service
+docker -v
+docker pull amilosh/app:latest
+docker run --name app -d -p 80:8080 amilosh/app:latest
+go to EC2
+  copy value from 'Public IPv4 DNS'
+http://ec2-51-20-42-196.eu-north-1.compute.amazonaws.com/hello
