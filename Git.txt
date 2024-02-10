@@ -1,1 +1,7 @@
 git clone https://github.com/username/app.git - clone repository from github to local PC
+
+Set email to project's git
+~projectFolder/.git.config
+  [user]
+      email = john.doe@gmail.com
+      name = John Doe

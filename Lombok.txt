@@ -1,0 +1,15 @@
+ - Spring Boot + Gradle -
+ext {
+    lombokVersion = '1.18.30'
+}
+
+dependencies {
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+}
+
+Add 'Enable annotation processor' in IDEA.
+
+@RequiredArgsConstructor
+  creates constructor with all private final fields
+  for @RestController and @Service

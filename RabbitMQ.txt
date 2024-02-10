@@ -1,12 +1,14 @@
 RabbitMQ - messages exchanger between network services.
 AMQP protocol.
 
-Producer - service that sends messages.
-Consumer - service that receives messages.
-Exchange (обменник) - stores all messages.
+Producer/Publisher - service that sends messages.
+Exchange - stores all messages; entry point for publishing messages.
+Binding - link between Exchange and Queue.
 Queues - queues to which the consumer is subscribed.
+Message - message
+Consumer - service that receives messages; subsecribes to Queue.
 
-Flow:
+ - Flow -
 Producer sends message to RabbitMQ
 RabbitMQ places message to Exchange
 Exchange defines the Queue to send message
@@ -15,8 +17,74 @@ When Consumer is ready to receive mesage, сopy of the message is created and se
 Consumer returns approve that it received message.
 Finally Rabbit deletes message and copy of message.
 
+ - Publisher -
+Publisher - creates connection via AMQP protocol, creates channel.
+Publisher or Consumer can declare exchanges, queues, bindings - you can choose individually for specific case.
+Publisher always writes to Exchange.
+Publisher defines delivery_mode for every message:
+  delivery_mode=1 - don't store message, faster
+  delivery_mode=2 - store message on disk. slower
+Publisher defines Routing Key for every message - ?
+Publisher can set 'confirm flag' - RabbitMQ responses that mesage was received. Low spped, difficult in singlethread applications.
+Publisher can set 'mandatory' - store message in other exchange if has no queue, rarely.
+
+ - Exchange -
+Exchange - router for messages.
+You cant change Exchange. For this: delete and create again.
+Binding - not a part of Exchange. You can change.
+Exchange sends messages to queues with suitable binding.
+Durable/Transient - Exchange will alive after rebooting RabbitMQ.
+Exchange doesn't store messages. If we send message to Exchange with binding/routing key that don't bind to any queue - message will be deleted.
+
+Exchange types: 
+ - Fanout
+     bind queue and exchange without routing key; one message to exchange -> two message to each queue
+ - Direct
+     routing key (queue) == routing key (message)
+ - Topic
+     the same as Direct, but uses wildcard: * - one word; # - many words
+ - Headers
+     not routing key, but headers of messages (finds key words in mesage)
+
+ - Binding -
+Binding - static rout from Exchange to Queue.
+You cant change Binding. For this: delete and create again.
+There are several Bindings between exhange-queue, but with different parameters.
+Binding parameters: routingkey or headers.
+
+ - Queue -
+Stores sequential messages.
+delivery_mode - for each messages
+Durable/Transient - Queue  will alive after rebooting RabbitMQ.
+Types:
+ - Classic - ordinary Queue 
+ - Quorum - ?
+ - Stream - ?
+
+ - Message -
+Consists from:
+payload - string or base64 (if Java object - convert to json)
+routing key - only one for one message
+delivery_mode - 
+headers - 
+
+ - Consumer -
+Describes on one queue only.
+Queue send message to Consumer via push-model, without scheduling, delaying.
+Prefetch count - how many messages Consumer can process at the same time. If 0 - receives all. If 1 - receives one, processes it and then receives second. (if multithreading - set number of threads)
+Acknowledge (ack) and Negative acknowledge (nack) - Consumer approves (or not) theat mesage was precessed ad response to Queue.
+AutoAck - auto acknowledge for all mesages.
+
+ - FIFO -
+Set prefetch_count=1. First message from Queue goes to Consumer. Consumer precessec this message. Consumer send ack to Queue. Queue send the second message to Consumer.
+We can set two consumers for one Queue. 
+
+
 docker run -d --name rabbitmq-poc -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+  http://localhost:15672/#/
+  default user: guest/guest
 
 implementation 'org.springframework.boot:spring-boot-starter-amqp'
 implementation 'org.springframework.amqp:spring-rabbit:3.1.1'
+implementation 'com.rabbitmq:amqp-client:5.20.0'
 
