@@ -1,0 +1,120 @@
+ - APN Overview -
+1. APN Partners.
+Глобальная программа для построения и обслуживания для кастомеров.
+Помогает компаниям строить, продавать и продвать их офферы.
+Предоставляет бизнес, технический и маркетинг саппорт.
+Десятки тысяч партнеров. 90% компаний используют амазон.
+2. APN Technology Partners.
+Provide hardware, connectivity services and software solutions.
+Often deliver components to broader AWS Cloud customer solution
+Компоненты могут быть предоставлены следующими путями:
+- by APN consulting Partners
+- through AWS Marketplace
+- as part of a customer-ready solution (AWS Quick Start)
+- from the APN Technology Partner
+APN Technology Partners включает независимых вендоров (ISV):
+- SaaS - software as service
+- PaaS - platform as service 
+- Developer tools
+Включает management and security vendors.
+Партнеры имеют доступ в тулам, тренингам и сапорту, который помогает строить эффективно.
+Партнеры могут достичь три перформанс слоя, основанных на продукт статусе, вовлечения кастомера и инвестиций в AWS^
+- Registered
+- Select
+- Advanced
+https://aws.amazon.com/partners/technology/
+3. APN Consulting Partners.
+Помогают кастомерам
+design, architect, build, migrate, manage workloads
+Включают:
+System integrators
+Strategic consultancies
+Agencies
+Managed service providers
+Value-added resellers
+Доступ к ресурсам и тренингам.
+Четыре слоя:
+Registered
+Select
+Advamced
+Premier
+
+
+
+
+
+ - APN Benefits -
+1. APN Consulting Prtnaer benefits.
+https://aws.amazon.com/partners/consulting/
+На фотке показаны бенефиты от программы.
+2. APN Partner Central.
+Страничка на сайте, которая предоставляет тулу и контент для роста. Контент: тренинги, сапорт, контент, конекшн с другими партнерами.
+3. Partner programs and competenties.
+Партнеры могут претендовать на участие в программе AWS Managed Service Provider. Эти провайдеры - квалифицированные в cloud infrastructure and application migration:
+- plan and design
+- build and migrate
+- run and operate
+- optimize
+AWS Solution Provider Program - для systems integrators, managed service providers, value-added resellers and public sector partners: resell амазон сервисы для кастомеров. Управляют, обслуживают, сапортят и строят сервис аккаунт для кастомеров.
+Для провайдеров - предоставляет tiered discount структуру, основанную на возможносятх партнера и успехах в бизнесе. Даёт опции удоавлетворять уникальные щапросы кастомера.
+AWS SaaS Factory - ресурсы для изучения SaaS офферов.
+4. AWS Competency Program.
+Проверяет техническую квалификацию и customer seccess в специальных areas. Достижение успеха дайт право показывать свою экспертизу в промышленности и приложениях.
+Бенефиты:
+- special access to market development funds, or preferred partner recommendations
+- go-to-market benefits, like a public designation on the AWS Competency website, AWS Competency badges and branding
+- selective eligibility for AWS Solution Space or APN Partner roundtable invitations
+- event benefits, like early access to AWS event collaboration, or on-site benefits and cobranding at AWS events
+https://aws.amazon.com/partners/competencies/
+5. APN marketing resources.
+Доступ к маркетинг ресурсам с помощью APN Marketing Toolkit. Повысить осведомленность и сформировать спрос на продукцию и решения вашего клиента.
+APN Marketing Central:
+- self-service marketing campaigns
+- cobrand
+- launch solution-based campaigns
+- engage select marketing services
+AWS Sponsorships:
+для in-person access to 300 000 customers and prospects. And events: re:Invent, PopUp Loft, AWS Summit
+How-to guides:
+- learn marketing best practices
+- extend skills
+- showcase your products and services
+6. APN Partner Acceleration Funding Program.
+Программы, котореы помогают прокачать ваше развитие, от технического до продаж и маркетинга.
+Training and Certification Funding
+  Тренинги которые повышают вашу capacity and capabilities в преподносе AWS решений.
+  Receive Promotional credits - можно потратить на дискаунт куросов и получение сертификата.
+Market Development Funding
+  support marketing efforts
+  MDF Cash
+  MDF AWS Promotional credits
+Partner Opportunity Acceleration (POA) Funding
+  усилить цикл продаж, и адаптацию кастомера к амазон решениям
+  AWS Promotional credits
+  Cofunded Partner Professional Services
+
+
+ - APN Training -
+1. APN Partner training resources
+(Deepen) AWS Training and Certification. Мы помогаем вам углубить ваши навыки, дифференцировать ваш бизнес и лучше обслуживать ваших клиентов.
+Доступны digital and classroom.
+Три пути изучения (paths):
+- AWS Technical Professional: получить фундамментальные технические знания по облвчным вычислениям
+- AWS Business Professional: получить понимание AWS сервисов и (proposition) предложение ценности бизнеса
+- AWS Professional Services: разработать и расширить professioanl services competencies.
+2. AWS Technical Professional Learning Path.
+AWS Technical Professional and AWS Cloud Economics аккредитация. Подтверждает твердое понимание основ technical professional. Потом дополнительные тренинги to their workload or solution area.
+3. AWS Business Professional Learning Path.
+AWS Business Professional and AWS Cloud Economics аккредитация. Подтверждает твердое понимание основ business professionals. Потом дополнительные тренинги to their workload or solution area.
+4. AWS Professional Services Learning Path.
+Для партнеров в технической роли, которые разрабатывают и расширяют компетенции в Professional Services. Select training by advisory services or solutions.
+Рекомендован для APN Premier and Advanced Consulting Partners who have achieved the recommended level of AWS Certification.
+
+
+
+ - Module / Course Conclusion
+1. Your partner team.
+Есть команда, которая поможет пройти твоё партнёр путешествие.
+Your first point of contact - ваша первая точка соприкосновения - Partner Development Represantative (PDR): help with on-boarding.
+Next point: Partner Development Manager - управляет взаимодействием между вами и AWS.
+ 

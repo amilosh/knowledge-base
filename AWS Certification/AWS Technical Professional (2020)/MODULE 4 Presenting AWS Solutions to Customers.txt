@@ -1,0 +1,162 @@
+ - Introduction -
+3. Maria prepares to present.
+Present best practices.
+Overcoming objections. (преодоление возражений)
+Разные подходы к разным типам митингов.
+4. В конце модуля мы будем хорошо презентовать решение для кастомера.
+Discovery
+Presenting a solution
+Delivering a POC
+Customer Meeting Best Practices
+5. Key phases.
+Discovery: митинг, чтобы понять требования кастомера
+Presenting the solution. Несколько митингов, на которых вы будете презентовать решение.
+Deliviring a Proof of Concept. Когда кастомер согласиться - показать ему, что всё работает.
+
+
+
+ - Discovery -
+1. Preparing for discovery.
+Нужно задавать вопросы, чтобы глубоко погрузиться в проблему.
+- Изучите бизнес кастомера. 
+- Изучите сегмент рынка. Законы и ограничеия.
+- Изучите тренды индустрии.
+- Изучите конкурентов
+- Изучите последние новости
+- Изучите использует ли кастомер AWS
+2. Discovery practices.
+- Encourage detailed conversation
+Вы должны не показывать свои знания, а слушать и понимать. Используйте знания AWS чтобы симулировать содержательный диалог.
+Задавайте наводящие вопросы. Они помогут, когда будете искать решение.
+Задвайте вопросы с открытым ответом (не "да-нет"). Это поможет беседе.
+- Five Whys
+Погрузиться в глубину вопроса, чтобы узнать корневые проблемы. От общего к специфическому.
+Uncover the real desired outcomes.
+- Whiteboarding
+Зарисовывать то, о чём вы договорились. Подготовьте документ с нарисованными основными договоренностями.
+Зарисуйте workflow и ideation (мышление) кастомера/
+-
+Дайте кастомеру знать, что вы будете делать с полученной информацией. И когда новый мит.
+
+
+ - Presenting a solution -
+1. Preparing an AWS solution.
+Надо встретится с коллегами, чтобы обсудиить проблемы, потенциальные решения и зарисовать.
+Можете нарисовать табличкую Иконки предоставляются амазоном.
+https://aws.amazon.com/architecture/icons/
+Нарисуйте три вариации как выдвигались к решению.
+Ещё сделайте более формальную презентацию в слайдах.
+После презентаций слушайте фидбек кастомера.
+2. Presenting an AWS solution.
+Вы должны суметь объяснить, почему выбрали каждый элемент и почему меняли решения.
+После презентации:
+сделайте повторение, спросите что не достает кастомеру, а что привлекательно
+в результате вы можете провести ещё один митинг
+цель - продемонстрировать, как архитектура решит все проблемы
+когда апрув - надо будет показаь Proof of Concept
+3. Best practices.
+носите с собой маркеры, стерку и пульт для презентаций
+стойте сбоку от презентации
+соблюдайте зрительнй контакт
+рисуйте красиво и сохраняйте порядок
+
+
+
+ - Handling objections (обработка возражений) -
+1. Objection handling technique.
+Выслушайте возражения перед тем, как идти дальше.
+Возражения не только на фактах, но и на восприятии. Обращайтесь к эмоциональному компоненту перед логикой.
+Постарайтесь понять кастомера, узнать его точку зрения.
+Постарайтесь свести проблему к основной проблеме.
+Предложите двигаться дальше.
+2. Objection handling best practices.
+Data-driven approach. (цифры и данные для большей убедительности)
+Покажите несколько юз-кейсов, которые использовали другие.
+Dive deep.
+Have backbone. Имейте костяк, чтобы защищать своё решение. Если чего-то не знаете, скажите что погуглите и ответите.
+Keep the momentum going.
+Сохраняйте темп. Если много вопросв - кастомер заинтерсован. Отвечйайте и идите дальше.
+3. Security:
+security at AWS is our top priority
+higher security posture than in legacy environments
+customers inherit all the benefits of our experiance
+validated against the strictest of third-party assurance frameworks
+4. Cost:
+reduce total cost of ownership (TCO)
+achieve continuously optimized and predictable spend
+no longer overprovision infrastructure for peak demand
+GE Oil and Gas decreased TCO by 52%
+5. Scalability and Response.
+build cloud foundation team
+create guardrails around security, availability, reliability and compliance
+AWS Control Tower gives maximum control - without sacrificing speed and agility
+
+
+
+
+ - Customer meeting best practices -
+1. Keys to consistent results.
+Подготовка к митингу. Один час презентации - три часа подготовки.
+Для каждого сервиса: акроним, быстрый ответ на вопрос, pricing model, документация, ограничения. FAQ секция.
+Предвидь адаптивный характер общения. Будь готовым к вопросам и возражениям.
+Каждое взаимодействие с клиентом - способ понять себя и AWS.
+Оставайтесь на связи и не теряйте из виду свои цели на встрече.
+2. What not to do.
+use words like definitely, never, or guaranteed
+use acronyms or technical jargon
+focus on technology (нужно фокусироваться на целях клиента)
+focus on the short/mid-term (надо говорить о долговечных результатах)
+read the slide (смотрите на кастомера)
+!3. Maria presents the solution (не смотрел)
+
+
+
+
+ - Delivering a POC -
+1. Maria plans a POC.
+Прототип пусть делают профессионалы.
+Я должна больше изучить ценность POC, способы, которыми я могу построить и финансировать проект.
+2. POC funadmentals.
+Practical example of solution.
+Evaluation mechanism.
+Надо показать кастомеру как наше приложение работает на нашем окружении. Это маленький практический пример. Кастомер может глянуть и попросить изменить.
+Это ещё возможность показать кастомеру возможности AWS.
+Не попадитесь в ловушку демонстрации услуг и сосредоточьтесь на удовлетворении бизнес-требований.
+3. Building a POC.
+customer agrees to POC
+take the feedback from the solution proposal (будьте готовы вносить модификации во время презентации)
+develop the POC (доверьте разработку профессионалам)
+collect the following information from customer:
+    networking and securoty
+    application code
+    databases
+    data
+4. Resources for POC.
+Нужны:
+Skills
+    building on AWS (надо знать как запустить и конфигурировать сервисы)
+    migrating data (bp старой апликухи)
+    validation and testing
+Resources
+    cost of running POC
+5. Training resources.
+Амазон предоставляет курсы, чтобы научиться делать POC.
+Можно найти на APN Partner Portal.
+https://aws.amazon.com/partners/training/path-tech-pro/
+6. Video: quick console demonstration.
+aws.amazon.com/getting-started
+aws.amazon.com/free
+7. AWS Quick Starts.
+aws.amazon.com/quickstart
+aws.amazon.com/answers
+rapidly deploy architeactures based upon best practices
+launchm configure, and run AWS services required to deploy a specific workload on AWS
+reduce manual procedures into few steps
+check back frequently for updates
+8. Partner Opportunity Acceleration (POA) Program. (не читал)
+Accelerate sales cycles and customer adoption
+Co-invest with you
+AWS promotional credits
+Cash reimbursements (компенсации)
+Expectations and requirements (Ожидания и требования)
+Contact your AWS Business contact for details.

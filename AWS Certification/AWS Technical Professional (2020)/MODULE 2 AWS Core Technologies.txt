@@ -1,0 +1,209 @@
+MODULE 2: AWS Core Technologies
+ - Introduction to AWS Cloud -
+1. On-premises solution - это когда customer покупает всё оборудование сам. Cloud AWS solution - это когда всё железо находистя у амазона, а customer пользуется этим с помощью интернета.
+Pay as you go - когда customer платит заранее зо то, чем он будет пользоваться.
+2. Advantages AWS:
+ - вместо покупки большого дата-центра, когда customer не уверен сколько мощностей понадобится, он может использовать только тот объём вычислительных мощностей, которые он потребляет в данный момент, и платить только за это (вместо капитальных затрат - переменные расходы)
+ - чем больше customers пользуется AWS, amazon может снижать издержки за счёт масштаба, и тем самым снижать цену for customer
+ - customer платит только за те ресурсы, которые потребляет
+ - доступ к IT-ресурсам за считанные минуты
+ - не надо обслуживать сервера и дат-центры, а сосредоточитсья на бизнесе
+ - deploy приложения в различные региона мира за пару кликов
+3. AWS Cloud contains: (on demand, pay-as-you-go)
+ - compute
+ - storage
+ - database
+ - analytics
+ - networking
+ - mobile
+ - developer tools
+ - management tools
+ - IoT
+ - security
+ - enterprise applications
+
+
+
+ - Global Infrastructure -
+1. Вычислительные мощнсти Амазона разбросаны по всему миру. И они изолированы, что обеспечивает отказоустойчивость и стабильность. Определённый ресурсы связаны с регионами.
+2. Avaliability Zones (AZs) - внутри каждого региона есть Avaliability Zone. Они разделены и учитывают географию. Но соединияются с помощью оптоволокна.
+ap-southeast-1 (Singapore Region) Если размещаете мощности здесь, то внутри будут три дата-центра, и ваши данные будет в двух из них (ap-southeast-1a, ap-southeast-1b, ap-southeast-1c)
+3. Points of Presence (POP) - точки присутствия. Состоят из Edge Locations and Regional Edge Cache servers. Используься для CloudFront: доставка данных, видео, приложений для клиентов с низкой задержкой и высокой скоростью.
+22 региона, 69 Avaliability Zones, 199 locations
+https://www.infrastructure.aws/
+
+
+
+
+ - Compute Services -
+1. AWS имеет категории:
+ - Compute
+ - Storage
+ - Database
+ - Security
+ - Management
+ - Networking
+В каждой категории есть несколько сервисов, которые клиент может гибко использовать в Web and mobile apps, Data processing and warehousing, Storage and archiving. Понимание этих категорий и сервисов важно для построения эффективных решений.
+2. Compute services - для разработки, развертывания, запуска и масштабирования приложений и workloads в AWS Cloud.
+Amazon Elastic Compute Cloud (EC2) - защищенный, resizable вычислительные мощности (compute capacity). Амазон автоматически расширяет или уменьшает количество instnces.
+Elastic Load Balancing (ELB) - автоматически предоставляет трафик из разных источников.
+AWS Lambda - начинает обработку кода после события; не нужны сервера.
+Amazon Elastic Container Service (ECS) - контейнер, в котором всё есть (как Docker), чтобы запускать приложения со scalable и high-performance.
+3. Benefits of Amazon EC2
+Гибкость - автоматическое уменьшение или увеличение ёмкости (или по требованию on demand) - увеличивает быстродействие, снижает стоимость.
+Полный контроль над интсансами.
+Гибкие сервисы для управления облачным хостингом. Клиент может выбрать различные типы инстансов, ОС и программ.
+EC2 интегрировано со всеми амазон сервисами.
+Надежность. Амазое быстро меняет или вводит в эксплуатацию инстансы. Использует проверенную инфтраструктуру для связи и дата-центры.
+Безопасность.
+Недорогой (inexpensive).
+Легко начать работу. Management Console, Command Line Interface (CLI), SDKs
+4. Amazon EC2 choices: Instance Types.
+EC2 имеет широкий выбор харда и софта, которые оптимизированы для различных вариантов использования: CPU, memory, storage, networking capacity and other.
+Инстансы разделены на категории:
+ - General Purpose: предоставляют баланс вычислений, памяти и сетевых ресурсов
+ - Compute Optimized: для сложных вычислений; за счёт хороших процессоров
+ - Memory Optimized: для быстроты; обрабатывают большие данные в памяти
+ - Accelerated Computing: использует hardware accelerators (быстрее чем CPU), числа с плавающей точкой, графика, data pattern matching
+ - Storage Optimized: для обработки больших данных, которые надо хранить в storage
+Три аббревиатуры Family: A, T, M.
+Внутри каждой Family есть generations.
+Каждый тип инстанса обозначен по размеру: nano, micro, small, medium, large, xlarge
+5. Amazon Machine Images (AMI).
+Выбираешь ОС, на которой будет крутится приложение (Linux, Amazon). На одной AMI могут быть несколько инстансов, с одинаковой конфигурацией.
+AWS Marketplace.
+Community AMIs.
+My AMIs.
+6. Why scaling matters. Почему масштабирование имеет значение.
+Когда в США идёт сбор налогов весной, компьютеры нагружены. В остальное время они простаивают.
+Scaling даёт:
+ - запустить инстансы заранее перед пиковым периодом
+ - мониторить и уменьшить мощности
+ - автоматически расширить
+ - платить только за ресурсы, которые используешь
+7. Amazon EC2 Auto Scaling.
+Амазон чекает перфоманс инстанса, и если он мёртв, то реплейсит на другой инстанс.
+Балансирует ёмкость среди зон.
+Dynamic and predictive scaling. Dynamic - реагирует на изменение запроса. Predictive - строится на основе скедулера.
+8. Amazon Elastic Load Balancing (ELB).
+Распределяет траффик среди нескольких инстансов, чтобы увеличить отказоустойчивость.
+Клиент может настроить проверку работоспособности (health check)
+Offload encryption and decryption.
+Клиент може твыбрать три лоад балансера:
+ - application load balancer (http траффик) (app layer)
+ - network load balancer (network layer) (устойчив к скачкам траффика)
+ - classic load balancer (classic instances)
+
+
+
+
+ - Storage services -
+1. Elastic Block Store (EBS) - постоянное хранилище на уровне блоков (persistent block-level storage). Это жёсткий диск (hard drive) для EC2. Клиенты могут создавать разделы, форматировать и загружать операционную систему.
+Amazon Simple Storage Service (S3) - склад для хранения объектов, долговечный, масштабируемый. Создан для интернета. Предоставляет интерфейс, с помощью которого девелоперы могут легко сохранять и доставать данные.
+Amazon S3 Glacier - для архивирования данных и бэкапа. Сохраняют даные для организаций на месяцы, годы и декады.
+AWS Storage Gateway - для интеграции между локальной машиной и амазон-облаком.
+Amazon Elastic File System (EFS) - сервис хранения файлов для EC2. Предоставляет интерфейс для конфигурирования файловой системы. Ёмкость - эластичная.
+2. Elastic Block Storage (EBS) - EBS volume предоставляет block-level storage для использования с EC2. Сохраняться независимо от инстанса. Можно использовать как hard drive. Есть i/o интерфейс.
+EBS volume - создаются копии внутри Availability Zone. После создания EBS volume клиент может приаттачить к EC2 инстансу. 
+One EBS volume to one EC2. 
+One EC2 to many EBS.
+Данные сохраняются, даже когда EC2 terminated.
+Можно создавать point-in-time snapshot of volumes. Эти снэпшоты хранятся в S3. Можно использовать при создании нового volume. Size: 1GB to 16 TB.
+3. Amazon S3 - для хранения объектов. Объекты хрянтся в бакетах (buckets). Один объект может быть до 5 терабайт. Количество объектов - неограничено. 99,9999999 надёжность, 99,99 доступность
+Юз-кейсы:
+ - backup and storage
+ - application hosting - для деплоя, установки и управления приложением
+ - media hosting - для видео, фото и музыки
+ - software delivery - приложения, которые клиент может скачать
+4. Storage classes on Amazon S3.
+Существуют различные характеристики данных, которые хочет хранит клиент. Поэтому важно знать, какой тип storage нужно выбрать. (Активные данные - редко используемые - архивные)
+Standard. Сервис предназначен для часто используемых данных. Поскольку он обеспечивает низкую задержку и высокую пропускную способность, сервис подходит для широкого спектра вариантов использования.
+Standard Infrequent Access. Когда пользуешься нечасто, но скорость доступа большая. Дешевле, чем standard. Для бэкап, long-term storage и disaster recovery.
+One Zone Infrequent Access. Ещё дешевле. Все даныые в одной зоне (вместо трёх). For storing secondary backup copies of on-premises data or easily re-creatable data.
+Amazon Glacier and Amazon Glacier Deep Archive. Низкая стоимость. Помощь в соблюдении требований для регулируемых организаций: здравоохранение, найка, финансы. Три retrieval опции: от минуты до часов.
+S3 Intelligent Tiering может помочь автоматизировать всё это. (Сохраняет деньги)
+
+
+
+
+
+ - Database Services -
+1. Амазон предлагает широкйи выбор баз данных. Они сконструированы для application use ceses. Управляют трудоёмкими задачами: бэкап, патч, репликация.
+Amazon Relational Database Service (RDS) - сервис, который предлагает выбрать один из популярных движков: Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle, SQL Server. Клиенты могут управлять этими базами по низкой цене и изменять ёмкость.
+Предоставляют критические таски: автоматический бэкап, снэпшоты и aytomatic host replacement.
+Amazon DynamoDB - noSQL база данных. Перформанс за одну милисекунду, а также увеличение масштаба и ёмкости. С помощью AWS Management Console. Может использовать метрики.
+Amazon ElastiCache - можно управлять in-memory cache в облаке. Увеличивает перфоманс, потому что клиенты могут брать информацию из in-memory caching system.
+2. Можно создать базу данных в EC2. Но использовать AWS Database Services лучше. Клиенты могут сконцентрироваться на бизнесе, а не на поддержании БД.
+Преимущества AWS Database Services:
+ - легко установить, управлять и поддерживать
+ - можно сосредоточиться на бизнесе; амазону отдать undifferentiated heavy lifting (трудоемкие задачи): поставка, бэкап, рековери, управление патчами безопасности, storage и минорными апдейтами.
+ - доступность по нажатию одной кнопки (Push-button high availability)
+ - синхронная репликация в резервный инстанс
+ - автоматический backup/point-in-time recovery
+ - масштабирование или уменьшение по какому-то паттерну
+Преимущества БД на EC2:
+ - больше контроля, гибкость, выбор
+ - SYS/SYSTEM user access, access at the operating system level
+ - Использование коммерческих фич, которые не поддерживаются амазоном
+
+
+
+
+ - Networking -
+1. Изолировать облачную инфраструктуру и масштабировать ёмкость по запросу.
+Virtual Private Cloud (VPC) - клиенты могут построить виртуальную сеть в облаке. Защищенные изоблированные секции, в которых клиенты могут деплоить ресурсы.
+Security Groups - управление доступом к нистансам.
+Network Access Control Lists (NACL) - управление доступом к подсетям.
+Сетевые продукты работают вместе, чтобы обеспечить нужды вашего приложения. For example, Elastic Load Balancing работает с VPC, чтобы обеспечить надежную сеть и безопасность.
+Amazon Route 53 - DNS сервер, напрявляет пользователей сайта, переводя ссылку сайта в IP address.
+2. Virtual Private Cloud (VPC) - клиент может запустить ресурсы в виртуальной сети, которую он определил:
+ - Networking layer for Amazon EC2
+ - A virtual network dedicated to a customer's AWS account
+Эта сеть похожа на обычную, которую клиент использовал в собственном дата-центре.
+Клиент имеет полный контроль: выбор своих IP адресов, создание подсетей, конфигурация rites and network gateways.
+Subnet - список IP адресов в VPC. Клиент может добавить инстансы в Public subnet - доступны всем, Private subnet - не подключены к интернету.
+3. Securing a VPC.
+Network Access Control Lists - контролирует траффик на уровне subnet.
+Security groups - контролирует траффик на уровне instance. (virtual firewall)/ Каждый инстанс может быть заассайнен к множеству Security groups. Если клиент не создал ни одной Security group, амазон создаст Default Security group.
+Flow Logs - захватывает сетевые события и записывает в Amazon CloudWatch Logs.
+Host-based firewalls - защита на уровке инстансов, например Windows Firewall или 3d party software.
+
+
+
+
+ - Security, Identity and Compliance (соответсвие) -
+1. Безопасность - один из самых важных концептов. Есть Security, Identity and Compliance сервисы.
+AWS Identity and Access Management (IAM). Защищенный контроль доступа.
+AWS Shared Responsibility Model.
+AWS Cloud compliance.
+2. AWS Identity and Access Management (IAM) - вы можете управлять доступом к сервисам и ресурсам. Создавать юзеров и группы и создавать пермишены.
+Сервис предлагает:
+ - fine-grained (детализированный) доступ к ресурсам: указанные юзеры к указанным ресурсам или действия; в указанное время.
+ - Multi-factor authentication for highly privileged users.
+ - The ability to analyze access, such as easily identifying and refining policies to allow access to only the services beaing use. (Возможность анализировать доступ,например легко определять и уточнять политику, чтобы разрешить доступ только к используемым услугам.)
+ - Integration with corporate directories, to allow federated access to users on identity system such as Microsoft Active Derectory. (Интеграция с корпоративными каталогами, чтобы разрешить федеративный доступ к пользователям в системе идентификации, такой как Microsoft Active Derectory.)
+3. Клиенты наследуют выгоды от дата-центров и network архитектуры, которые построены с использованием защиты
+У облачных сервисов такая же защита как и у стационарных дата-центров, только вам не надо платить за обслуживание
+Защита может быть легко автоматизирована.
+Унаследованы лучшие практики амазона, которые удовлетворяют требования самым security-sensitive клиентам
+4. Защита и соответсвие - это возможности, которыми можно поделиться.
+AWS - это ответсвенность за "защиту облака": глобальная инфраструктура, регионы, зоны, edges locations; хард, софт, сети и объекты; вычислительный мощности, storage, база данных, сеть
+Клиенты и APN partners - это ответственность внутри облака: данные; доступ к платформе, приложениям, идентификации; операционная система, сети firewall configuration; client-side encryption, server-side encription, network traffic protection
+5. AWS каждый год проходит аудит и получает сертификаты от различных организаций.
+Публикует свои достижения в сфере безопасности.
+Sharing Information
+ - Industry certifications
+ - security and control practicies
+ - compliance reports directly under NDA
+Assurance Programs:
+ - certifications and attestations
+ - laws, regulations and privacy
+ - alignments and frameworks
+
+
+
+ - Management interfaces -
+Юзеры могут управлять ресурсами тремя способами:
+ - AWS Management Console - графический интерфейс, которйы содействует управлению облаком (мониторинг месячных трат на каждый сервис, секьюрити, сетать новых IAM users)
+ - Command Line Interface (AWS CLI) - доступ и управление сервисами с помощью командной строки
+ - Software Development Kits (SDKs) - предоставляет доступ к сервисам из программного кода

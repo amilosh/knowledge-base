@@ -1,0 +1,172 @@
+ - Module Introduction -
+1. Goals:
+Адаптировать решения AWS для решения проблем заказчика
+Адаптировать лучшие практики по архитектуре и оптимизации стоимости
+Контент:
+Описание проблемы заказчика
+Описание AWS решения
+    подоходы для миграции
+    лучшие практики архитектуры
+    лучшие фреймворки
+    юз кейсы
+2. AWS Solutions
+В предыдущем топики изучили сервисы. В этом посмотрим как их комбинировать чтобы решать проблемы заказчика.
+- Enterprise Application - зрелый сет сервисов для построения приложения для больших компаний, которые соответсвуют безопасности, аутентификации и управления
+- Storage - устойчивый, цено-эффективный для бэкапа, рековери и архивации данных (можно hfcobhznm до петабайтов)
+- Serverless Computing - сборка и запуск приложений не думая о серверах
+- Windows Workloads - гибкая расширяемая область для Microsoft приложений.
+- Containers - упаковка и деплой приложений, которые легковесны; и предоставление совместимого окружения для легкого запуска и расширения
+- Machine Learning - сильные сервисы и платформы; широчайшие фреймворки, которые поддерживаются везде
+- Internet of Things - система повсеместного конекшена между девайсами в облаке
+- Analytics & Data Lakes - анализ данных в централизованном репозитории
+3. Architectural diagram
+Диаграмка как можно построить архитектуру, используя AWS сервисы.
+
+
+
+
+ - Adressing customer challenges -
+У заказчика есть приложение на Апач сервер и одна база данных, которая записывается на ленту.
+
+
+
+ - Migration strategies -
+Есть шесть подходов для миграции на облако:
+- Rehost
+- Replatform
+- Refactor
+- Retire
+- Retain
+- Repurchase
+Первые три включают в себя migrating workload to the AWS cloud. Вторые три - другие варианты для on-premises archetictures.
+1. Rehost: lift and shift. Для тех у кого приложение расположено локально. Подход "lifting and shifting" на облако. Сервера - в EC2 инстансы. Network пересоздается, используя VPC, subnets, security groups, internet and VPN gateways. Pay-as-you-go - платишь только за ресурсы, которые используешь. Экономия денег.
+Можно мигрировать автоматически с помощью тулзы AWS VM Import/Export. Некоторые предпочитают вручную. Ещё преимущество: легче оптимизировать и поменять архитектуру после того, как приложение будет мигрировано на облако.
+2. Replatform: lift, tinker and shift. Базовая архитектура проекта не меняется. Targeted cloud optimizations: миграция БД в Amazon RDS; миграция приложения в Amazon Elastic Beanstalk. Оптимизация архитектуры, используя лучшие практики. От функционального приложения к безопасному, устойчивому и cost-effective.
+3. Refactor: modernize. Re-architecting. Re-imagining how the application is architected and developed (using cloud-native features). Когда есть жесткие требования по масшатабированию и перфомансу, которые не достичь в обычном энвайроменте: база данныз - из EC2 или RDS в Aurora. Монолитную апликуху в service-oriented design (чтобы использовать современные технологии, лямбду)
+4. Other. 
+Retire. Некоторые приложения no longer useful. Их можно shut off, сокращение объема архитектуры для миграции, обслуживания и обеспечения безопасности.
+Retain/Revisit. Некотрые приложения заказчик не готов мигрировать, по техническим или финансовым соображениям. Он может мигрировать то, что ему нужно.
+Repurchase. Moving workflows to software as a service. Customers choose SaaS when they want to get to zero maintenance and the product provides modern connectivity to data, cloud processing and other line of business apps. Salesforce.
+
+
+
+
+ - Cloud Architecture Best Practices -
+Best practices and the Well-Architected Framework.
+Well-Architected Framework - это основа, на которой архитекторы делают правильную миграцию в облако (безопасность, производительность).
+Ключевые принципы при разработке решений:
+1. Design for failure and nothing fails.
+Разбивайте архитектуру на элементы. Что при отказе сыпалось не всё, а только отдельный элемент.
+- avoid single points of failure
+- multiple Instance
+- multiple Availability Zones
+- separate single server into multiple tiered application
+- for Amazon RDS, use Multi-AZ feature
+2. Build security in every layer.
+- encrypt data at rest and in translit.
+- Enforce principle of least privilege in IAM - принцип наиманьших првилегий
+- implementing both Security Groups and Network Access Lists
+- consider advanced security features and services (Amazon Inspector, Amazon Guard Duty, AWS Shield)
+3. Leverage different storage options.
+- move static web assets to Amazon S3
+- use Amazon CloudFront to serve globally
+- store session state in DynamoDB
+- use ElastiCache between hosts and databases
+4. Implement elasticity. (упругость)
+- implement auto scaling policies
+- architect resiliency to reboot and relaunch (устойчивость) (кто я и какая моя роль)
+- leverage managed services like Amazon S3 and Amazon DynamoDB
+5. Think parallel.
+- scale horizontally, not vertically (увеличивайте количество ресурсов, а не мощность ресурсов)
+- decouple compute from state/session data (отделите вычисления от данных состояния/сессии)
+- use Elastic Load Balancers to distribute the load
+- right-size your infrastructure (баланс между стоимостью и мощностью)
+6. Loose coupling sets you free. (если зацепления нет - это делает вас свободным)
+Чем слабее связи сервисов, тем сильнее они могут масштабироваться.
+- instead of a single, ordered workflow, use multiple queues
+- use Amazon Simple Queue Service and Simple Notofoaction Service (SQS and SNS)
+Используйте преимущества уже написанных сервисов: email, queues, transcoding, search, databases, monitoring, metrics.
+7. Don't fear constraints. (ограничений)
+- rethink traditional constraints
+- вместо увеличения RAM - распределение нагрузки между инстансами
+- вместо пределывания базы данных - расширение горизонтально; отделение между read and write
+- вместо того, чтобы ждать когда починят hardware - прочто rip and replace
+
+
+
+ - The Well-Architected Framework -
+1. What is the Well-Architected Framework?
+Помогает проектировать решения, используя лечшие практики. Безопасность, перформанс, жизнестойкость, эффективность.
+На основе ревью архитектуры кастомеров.
+Систематический подход для оценивания и реализации архитектуры.
+- tool in the AWS console (кастомеры могут мониторить состояние workload и сравнивать с последними лучшими практиками)
+2. The five pillars. (пять столпов)
+- Operational excellence (операционное превосходство) - раннинг и мониторинг системы, которые предоставляют бизнес ценность, постоянно улучшают процессы и процедуры. Управление, автоматическое изменение, реагирование на события, определение стандартов для успешного управления.
+- Security. Защита информации и систем. Интеграция данных и идентификация, кто что может делать, используя привилегии.
+- Reliability. Надеждность. Предупредить и бысто сделать recover. Setup, requirements, recovery planning, change handling.
+- Performance efficiency. Работоспособность. Использование IT и вычислительных мощностей эффективно. Правильный выбор типа ресурсов и их размер на основе требований., мониторинг перфоманса, и принятие обоснованных решений для поддержания эффективности по мере развития потребностей бизнеса.
+- Cost optimization. Избегание платы за то, что не надо. Контроль за тем, куда тратятся деньги; правильный выбор ресурсов, расширение по требованиям бизнеса.
+3. Cost optimization. В отличиче от стационарных машин, в AWS платится только за то, что нужно. Лучшие практики:
+- Right-sizing instances. Процесс мониторнига деплоя и уменьшение ресурсов.
+- Increasing elasticity. Масштабирование в зависимости от спроса.
+- Choosing the right pricing model. Напр. использование Reserver Instances для workloads, которые работают всё время.
+- Optimizing storage. S3 Intelligent-tiering.
+
+
+
+ - Customer Use Cases -
+1. Maria looks into Use Cases.
+Мария посмотрела:
+- best practices
+- migration strategies
+- different ways to optimize the solution
+2. Benefits of Customer Use cases.
+На бумаге все выглядит строко по пунктам. Но в реальности приходится делать отступления.
+When in comes to presenting a solution, use cases have an important place. No matter how solid the design and the underlying infrastructure, a cloud migration often represents a major operational change to a customer. It often will require more than presenting architectural drawings and service level agreements to ease theurconcerns. Showing 4-9's is less compelling than showing actual testimony from a similar customer of how 4-9's solved a business problem, or directly related to additional business value.
+3. Customer success site.
+aws.amazon.com/solutions/case-studies
+AWS Customer Success - ресурс, на котором можно найти юз-кейсы, чтобы вдохновить остальных кастомеров.
+На сайте можно найти юз-кейсы дрегих компаний и выбрать похожую на свою.
+4. AWS Solutions and AWS Solution Space.
+AWS Solution использует сервисы AWS и AWS платформу. Разработаны, чтобы решать пробелмы заказчика (эффективность, долговечность, безопаснотсь, цена). Предоставляет подробную архитекту и деплоймент гайд (автоматический и вручную). Интегрирован с APN partner.
+AWS Solution Space - предоставляет кастомерам AWS Competency Partner Solution:
+- Solutions Briefs
+- Quick Starts
+- Consulting Offer
+5. AWS Quick Starts.
+Помогает вам деплоить популярные AWS технологии, используя best practices. Вместо множества ручных процедур - несколько шагов.
+Каждый Quick Start включает AWS CloudFormation который преждоставляет всё выше сказанное.
+aws.amazon.com/quickstart - можно выбрать то что нужно и смотреть
+
+
+
+ - Solution Proposal -
+1. Maria has a solution:
+- secure
+- cost-efficient
+- scalable
+- compliant
+2. Current solution:
+2-tier solution:
+- web (load balancer) public subnet
+- database - private subnet
+Nightly database backup to tape.
+3. New solution design.
+Support best practices, Well-Architectired Framework; secure, resilient (устойчивый), highly-available.
+- Web tier, App tier, DB tier (Amazon RDS - MySQL engine).
+- Уменьшение накладных расходов на управление БД. Резервная кпия в S3
+- Bastion host - для управления инстансами
+- Web и App имеют Elastic Load Balancer и Auto-scaling.
+- Добавлен S3 для хранения статики, которую можно извлечь, используя CloudFront
+- Используются две Availability Zone + реплика БД
+- Security:
+    web host in public subnet; app и RDS in private subnet.
+    Security Groups
+        web host можно юзать на порту 80 или 443 для web request
+        app host доступн только app траффику из web proxy
+        RDS доступн только по порту 3306 из app host
+        bastion hosts только из AnyCompany internal network. Все остальные хосты конектятся в bastion host
+    Network Access Control Lists (NACL) - правила, которые фильтруют траффик в subnet - дополнительный слой защиты
+    S3 buckets могут быть реализованы с секьюрити фичами
+    IAM группы и роли, у которых есть привилегии
+    Мониторинг и логгинг

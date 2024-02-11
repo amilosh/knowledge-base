@@ -1,0 +1,116 @@
+ - Introduction - 
+Мария: Кастомеру понравилась POC и она дал добро на реализацию и миграцию данных.
+Как сделать это гладко и соответствовать ограничениям. Как оставаться на связи и продолжить улучшать решение.
+Лучшие практики для обслуживания нового кастомера:
+data migration
+going to production
+Minimum Viable Product
+Well architected review
+
+
+
+ - Solution implementation -
+1. The migration process.
+Есть четыре фазы для миграции. Это не раздельные фазы, а итерационный процесс. AWS предоставляет комплесную тулу чтобы облегчить каждый степ.
+Assessment phase.
+Определите готовность кастомера к работе в облаке. И потенциальный выхлоп от миграции.
+Readiness and planning. (готовность и планирование)
+Устраните пробелы, которые были у кастомера в предыдущей фазе.
+Оцените environment кастомера и определите стратегию миграции (rehost, replatform).
+Set up a secure and well-architected multi-account AWS environment - AWS Landing Zone.
+Migration.
+Из портфолио в индивидуальное приложение.
+Каждое приложение разработано, мигрировано и валидировано.
+Автоматически или вручную смигрировать в амазон.
+Миграция данных.
+Operations and Optimizations.
+  Operate  
+  Manage
+  Optimize
+  Improve operating model
+2. Minimum Viable Product (MVP) (Минимальный Жизнеспособный Продукт)
+Это когда кастомер видит прогресс выполнения.
+Это функциональный продукт достаточный, чтобы удовлетворить кастомера. И оставить место для фидбэка для будущей разработки решения.
+Позволяйте кастомеру держать в уме новые идеи. Избегайте "big bang" решений, которые имеют ценность только в конце цикла.
+Начните с основ и собирайте фидбек по мере того, как становитесь всё более сложным.
+3. MVP and delivering results.
+MVP-это разница между получением ценности здесь, в самом начале проекта, и получением ценности на разных стадиях принятия всего проекта.
+POC - быстрая демонстрация решения. MVP - production level.
+4. Migration strategies.
+See phone photo.
+5. AnyCompany's Migration - Replatform.
+See phone photo.
+6. Going to production.
+Best practices:
+Возглавьте account team и дайте знать что начинать проект. Solution Architect or Technical Account Manager.
+Customer-specific regulatory requirements. Узнайте ограничения ксстомера и сообщите архитектору.
+Заказчик ответсвеннен за соответсвие приложения с ограниченями.
+AWS Support level. Кастомер может выбрать уровень саппорта.
+7. Well Architected Review.
+Рекомендуем иногда делать Well Architected Review. Сравнение текущего состояния и лучших практик. By APN partners.
+Ревью предоставляет руководство; как степ бай степ улучшить приложение.
+Continous review, последовательно.
+Используй тулу, чтобы узнать риски и следующие шаги по улучшению.
+Improved architectures.
+Определи и реализуй улучшения.
+Используй тулу, чтобы постоянно улучшать с помощью Well Architected Tool. Можно следать за changes.
+8. AWS Well-Architected Tool
+Free и доступна на AWS Management Console.
+Identify workload to document.
+Ответьте на вопросы по архитектуре.
+Ревью ответов по каждой pillars Well-Architected Framework.
+Тебе предоставят: видео и документы, репорт, single dashboard.
+
+
+
+ - Modernization -
+1. Modernize to drive growth.
+Retire expensive legacy solutions
+Reduce TCO, improve cost optimization
+Gain agility through automation
+Free up resources to drive innovation
+2. Modernization of architectures.
+Serverless computing
+Containers
+DATA lakes and analytics
+https://aws.amazon.com/enterprise/modernization/
+3. Serverless.
+AWS предоставляет кучу сервисов, которые находятся на стороне амазона и кастомеру не нужно за ними следить:
+provisioning
+maintaning
+administering servers
+compute
+databases
+storage
+stream processing
+message queueing.
+AWS handles fault tolerance and availability.
+Кастомер может сосредоточиться на product innovation.
+3. Containers.
+Package code, configurations and dependencies into a single object.
+Share an operating system
+Run as resource-isolated processes
+AWS offers resources and orchestration services
+Use cases:
+- microservices
+- batch processing
+- machine learning
+- hybrid applications
+- application migration to the cloud
+- platform as a service
+4. Analytics and data lakes.
+Data in different silos can be difficult to access and analyze
+Store data in a "data lake"
+Easy to read data and abtain insights
+Services:
+- data movement: import your data from on premises and in real-time
+- data lake: store any type of data securely, from gigabytes to exabytes
+- analytics: analyze your data with the broadest selection of analytics services
+- machine learning predict future outcomes and prescribe actions for rapid response
+Все данные в одном месте. Это быстрее, легче и лучше анализировать.
+Value:
+- improved customer interactions
+- improved R&D innovation choises
+- increase operational efficiencies
+!5. Data lakes and analytics solutions on AWS. (не читал)
+SEE PHOTO
