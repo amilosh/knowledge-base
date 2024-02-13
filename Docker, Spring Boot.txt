@@ -25,6 +25,7 @@ Run image:
     -p - ports
     8000 - port on localhost
     8080 - post inside docker
+    -it - go to container and show console from inside container
     -i, --interactive - go to container and show console from inside container 
     -t, --tty - 
     -d, --detach - run container and go back to cmd
