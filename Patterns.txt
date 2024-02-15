@@ -1,0 +1,1 @@
+Service discovery pattern: see Microservices, REST

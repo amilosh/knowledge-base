@@ -1,0 +1,23 @@
+Spring initializer: start.spring.io
+
+Add property to application context dynamically (not from application.properties but from code): DynamicPropertyRegistry:
+    @Container
+    static final MongoDBContainer mongoDBContainer = new MongoDBContainer(DockerImageName.parse("mongo:7.0.5"));
+    @DynamicPropertySource
+    static void setProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
+    }
+
+product-service/.idea
+product-service/*.iws
+product-service/*.iml
+product-service/*.ipr
+product-service/out/
+product-service/!**/src/main/**/out/
+product-service/!**/src/test/**/out/
+product-service/bin/
+product-service/!**/src/main/**/bin/
+product-service/!**/src/test/**/bin/
+product-service/build/
+product-service/!**/src/main/**/build/
+product-service/!**/src/test/**/build/

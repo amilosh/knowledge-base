@@ -1,0 +1,25 @@
+Redis - map<key,value> date base.
+Very fast: Get and Post.
+Stores data in RAM.
+Easy to lose
+Issue: backup to disk
+
+Uses for:
+cash strategy (banking, e-commerce)
+high load
+key, tokens of users (session information)
+temporary data storage
+non-responsible data
+Gaming: tore position of players
+industrial sensors
+message broker
+
+Advantage:
+set the lifetime of key-value pair
+
+ - Docker -
+docker pull redis:7.2.4
+docker run --name redis-db -d -p 6379:6379 redis:7.2.4 redis-server (standalone mode)
+
+standalone and cluster mode - ?
+

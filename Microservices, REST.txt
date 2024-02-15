@@ -1,0 +1,9 @@
+ - WebClient -
+org.springframework.boot:spring-boot-starter-webflux
+import org.springframework.web.reactive.function.client.WebClient;
+    @Bean
+    public WebClient webClient() {
+        return WebClient.builder().build();
+    }
+
+ - Service doscovery pattern - 

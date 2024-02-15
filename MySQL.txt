@@ -1,0 +1,13 @@
+ - Docker -
+docker pull mysql:8.3
+docker run -d --name mysql-cont -p 3307:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=db_one mysql:8.3
+
+docker exec -it {containerId} bash
+mysql -u root -p root
+
+CREATE DATABASE db_two;
+
+ - Commands -
+SHOW DATABASES;
+USE db_one;
+SHOW TABLES;
