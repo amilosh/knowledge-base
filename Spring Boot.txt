@@ -21,3 +21,9 @@ product-service/!**/src/test/**/bin/
 product-service/build/
 product-service/!**/src/main/**/build/
 product-service/!**/src/test/**/build/
+
+ - application.properties -
+spring.application.name=app - name of spring application
+server.port=8082 - port where application will be running
+  server.port=0 - random free port
+    (IDEA - configuration -> 'allow parallel run' or 'allow multiply instances')

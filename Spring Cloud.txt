@@ -1,0 +1,68 @@
+ - Review -
+Run Eureka Server (discovery-service).
+Run first-service (spring boot application on random port)
+  first-service will subscribe to discovery-service
+Run second-service (spring boot application on random port)
+  second-service will subscribe to discovery-service
+Discovery-service knows about first-service and second-service (and about its hosts ad ports).
+And each services know about each other on own side.
+  Even we shut down discovery-service - services will going communicate.
+
+The main goal: services has many instances with different ports (that can change). 
+  And services can communicate via WebClient not with 'host:port' values but with service name (registered in discovery-service).
+  And finally when first-service send request to second-service it uses LoadBalancer.
+
+- Eureka Server -
+Eureka Server - service discovery (finds your microservices).
+Clients can register in Eureka Server.
+Clients can ask Eureka Server to find other microservices.
+
+<dependencyManagement>
+    ...
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-dependencies</artifactId>
+    <version>${spring-cloud.version}</version>
+	...
+</dependencyManagement>
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+    </dependency>
+</dependencies>
+${spring-cloud.version has to be compatible with Spring Boot version:
+  spring boot: 3.2.2 -> sprig cloud: 2023.0.0
+  
+Add to main class:
+  import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+  @EnableEurekaServer
+  
+eureka.instance.hostname=localhost
+server.port=8761
+eureka.client.register-with-eureka=false - defines if Eureka server is client as well
+eureka.client.fetch-registry=false - get or not information about registered clients
+
+http://localhost:8761
+
+ - Eureka client -
+pom.xml - the same as for Eureka server
+
+spring.application.name=app-service - register your app in Eureka by name
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+  defaultZone=http://localhost:8761/eureka - Map<String, String> with Eureka servers to reister
+
+Client can has many instances on different ports
+  server.port=0 - random free port on the machine
+    (IDEA - configuration -> 'allow parallel run' or 'allow multiply instances')
+
+REST:
+@Configuration
+public class WebClientConfig {
+    @Bean
+    @LoadBalanced
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
+    }
+}
+webClientBuilder.build().get()
+.uri("http://client-service/api/")...  (instead or localhost:8080 -> client-service)
