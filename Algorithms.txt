@@ -1,0 +1,5 @@
+ - Complexity of algorithm -
+O - how complex an algorithm. How may iteration depends on number of elements. 
+O - Asymptotic Notation
+O(n) -  “O of n” - go throgh all elements
+O(log2(n)) - find name in sorted dictionary

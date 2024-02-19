@@ -5,3 +5,16 @@ Set email to project's git
   [user]
       email = john.doe@gmail.com
       name = John Doe
+
+ - tag -
+Understanding. Your code is stored in brancher. If you create new commit you cannot build application from old code.
+tag allows to do it. You just create new tag and git remembers the state of code. Further you can build application from any tag (even using the same branch).
+
+git tag - list of tags
+git tag {tagName} - create new tag
+git push origin {tagName} - push tag to remote repository
+git push --delete origin {tagName} - delete tag from remote repository
+git tag --delete {tagName} - delete tag from local git
+git ls-remote --tags origin - list tags from remote repository
+
+git log -{n} - show n latest commits

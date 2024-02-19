@@ -1,0 +1,74 @@
+ - Schools -
+https://otus.ru
+https://slurm.io
+https://job4j.ru/index.html
+
+ - Youtube -
+https://www.youtube.com/@otus_education/videos
+https://www.youtube.com/@it-interview2055/videos
+https://www.youtube.com/@ProgrammingTechie/videos
+https://www.youtube.com/@avecoder/playlists
+https://www.youtube.com/@EmbarkX/videos
+https://www.youtube.com/@itdog/videos
+https://www.youtube.com/@DailyCodeBuffer/videos
+https://www.youtube.com/@shurik_codes/videos
+https://www.youtube.com/@visualcomputerscience/videos
+https://www.youtube.com/@CodeVice111/videos
+https://www.youtube.com/@fakng-engineer/videos
+https://www.youtube.com/@SpringframeworkGuru/videos
+https://www.youtube.com/@ITDiscovery/videos
+https://www.youtube.com/@JUGru/videos
+https://www.youtube.com/@TechTrainFest/videos
+https://www.youtube.com/@artemshumeiko/videos
+https://www.youtube.com/@EugeneSuleimanov/videos
+https://www.youtube.com/@PhilipStarritt/videos
+https://www.youtube.com/@job4j/videos
+https://www.youtube.com/@IBSTrainingCenter/videos
+
+ - Sites -
+https://dev.to
+https://tedblob.com
+https://it-interview.io
+https://habr.com
+https://career.habr.com
+https://howtodoinjava.com
+https://devby.io
+https://www.bezkoder.com
+https://www.logicbig.com
+https://leodev.ru/blog/
+https://sysout.ru
+https://jpoint.ru
+https://jugru.org
+https://developer.ibm.com/technologies/
+https://developer.ibm.com/languages/
+https://proselyte.net
+https://urvanov.ru
+https://parshinpn.ru/ru
+https://vladmihalcea.com
+https://java2novice.com
+https://vogella.com/tutorials/java.html
+https://www.viralpatel.net
+https://dzone.com
+https://examples.javacodegeeks.com
+programador.ru
+https://it-simulator.com/#/
+https://hellokoding.com
+https://www.concretepage.com
+http://www.journaldev.com
+https://java-online.ru/index.xhtml
+https://www.javatpoint.com
+https://mkyong.com
+https://codejava.net
+https://proglib.io
+
+ - Github - 
+https://github.com/olga-bylnova
+https://github.com/springframeworkguru
+https://github.com/davidkiss
+
+ - Job -
+https://proxify.io
+
+ - Useful links - 
+https://bootswatch.com - bootstrap templates
+https://fakestoreapi.com/docs - api with data
