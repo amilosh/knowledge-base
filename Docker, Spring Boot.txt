@@ -3,6 +3,34 @@ Docker desktop version: https://docs.docker.com/desktop/release-notes/
 Docker engine version: 
   docker version
 
+ - Dockerfile -
+FROM openjdk/node/python - pull image to our container
+WORKDIR /app - we define folder in image, where we will copy files from PC
+  this case if we write COPY . . - we place files to 'app' folder in image
+COPY . . - copy files from PC to image; image has folder structure as in windows/linux
+  first . - copy files from project root (where Dockerfile placed)
+  second . - place all files to root of image
+    COPY . /app - place all files to folder 'app' in image
+RUN npm install - inside image we do the same as in PC (when we build image))
+EXPOSE 3000 - which port application will use
+CMD ["node","app.js"] - array of commands (when we run image)
+
+ - Dockerfile - cache -
+When we generate new images we use the same artifacts in every build. Docker cahces these artifacts. We can reuse them.
+FROM node
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . .
+
+ - Dockerfile - ingore -
+We can define folders (from PC) which don't be included to image.
+.dockerignore
+  node_modules
+  .git
+  Dockerfile
+  .idea
+
  - Dockerfile, image, container, run application -
 Generate app-0.0.1.jar file via Gradle.
 Create Dockerfile:
@@ -30,21 +58,39 @@ Run image:
     -t, --tty - 
     -d, --detach - run container and go back to cmd
     --name - name of the container
+    --rm - container automatically well be removed after stop
 
 Create docker image by Spring Boot + Gradle:
   gradle bootBuildImage
 
+ - Docker image -
+Contains from layers - tree of images that or image depends on.
+  docker image inspects {imageId}
+
+ - Commands -
+docker - list of commands
+docker version - version of docker engine
 docker images - list of images
+docker image ls - list of images
 docker container ls - list of contaiers
 docker ps - (process status) running containers
 docker ps -a - --all - all containers
-docker rm -f abc123 - force close and remove container
+docker attach {containerId} - ?
+docker logs {containerId} - logs inside the container
+docker start {containerId} - start already created container in detach mode
+docker stop {containerId} - stop container
+docker rm {containerId} - remove container
+docker rm -f {containerId} - force close and remove container
+docker container prune - delete all not running containers
 docker image rm - remove image
+docker rmi {imageId} - delete image
 docker exec -it {containerId} bash - go inside container to bash console
+  .exit - exit from cotainer, go back to PC
 docker pull abc123 - pull docker image from hub.docker, abc123 - artifact, e.g. postresql
 docker inspect abc123
   IPAddress
-docker version - version of docker engine
+docker image inspects {imageId}
+
 
 Run PostgresSQL:
 docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=postgres -d -p 5432:5432 -v C:\postgres_volume:/var/lib/postgresql/data postgres:15.5

@@ -41,6 +41,7 @@ eureka.instance.hostname=localhost
 server.port=8761
 eureka.client.register-with-eureka=false - defines if Eureka server is client as well
 eureka.client.fetch-registry=false - get or not information about registered clients
+spring.cloud.config.import-check.enabled=false - ?
 
 http://localhost:8761
 

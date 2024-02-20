@@ -24,6 +24,7 @@ https://www.youtube.com/@EugeneSuleimanov/videos
 https://www.youtube.com/@PhilipStarritt/videos
 https://www.youtube.com/@job4j/videos
 https://www.youtube.com/@IBSTrainingCenter/videos
+https://www.youtube.com/@CodingWorldWithNinja/videos
 
  - Sites -
 https://dev.to
@@ -60,11 +61,23 @@ https://www.javatpoint.com
 https://mkyong.com
 https://codejava.net
 https://proglib.io
+https://www.callicoder.com
+https://memorynotfound.com
+Aleksey Shipilëv - Алексей Шипилёв
+
+ - Sites, Coding -
+https://www.codewars.com
+https://leetcode.com
+https://www.hackerrank.com
+quizful.net
 
  - Github - 
 https://github.com/olga-bylnova
 https://github.com/springframeworkguru
 https://github.com/davidkiss
+https://github.com/tolis-e
+https://github.com/sqshq
+https://github.com/yegor256
 
  - Job -
 https://proxify.io
