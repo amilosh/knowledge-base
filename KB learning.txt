@@ -3,12 +3,17 @@
   +Part 1
   +Part 2
   +Part 3 | Service Discovery
-  https://www.youtube.com/watch?v=8PJUnnhLXiI&list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c&index=4 - Spring Boot Microservices Project Example - Part 4 | API Gateway 17:48
+  +Part 4 | API Gateway
+  +Part 5 | Security
+  +Part 6 | Resilience4J Circuit Breaker
+  +Part 7 | Distributed Tracing
+  -https://www.youtube.com/watch?v=-ebTPcHANnI&list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c&index=8
 https://www.youtube.com/watch?v=lL_j7ilk7rc
 https://github.com/sqshq/PiggyMetrics
 
  - Docker -
 +https://www.youtube.com/watch?v=n9uCgUzfeRQ
++https://www.youtube.com/watch?v=I18TNwZ2Nqg
 https://dev.to/mattdark/docker-setting-up-a-credential-helper-4nbh
 
  - RabbitMQ -
@@ -63,3 +68,7 @@ http://sql-tutorial.ru/sqlbook/ru
 https://medium.com/javarevisited/10-best-udemy-online-courses-for-java-developers-4c9ab70cd01f - 10 Best Udemy Courses for Java Developers in 2024
 https://www.udemy.com/course/decodingdevops/ - DevOps Beginners to Advanced with Projects
 https://thorben-janssen.com/youtube-channels-you-should-follow-in-2019/ - 14 YouTube Channels You Should Follow in 2019
+
+ - Kubernetes -
++https://www.youtube.com/watch?v=q_nj340pkQo&list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi // structure, advantages
+-https://www.youtube.com/watch?v=WAIrMmCQ3hE&list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi&index=2

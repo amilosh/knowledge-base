@@ -11,6 +11,7 @@ sudo -i - run some commands as root user, mirror environment
 sudo -s - run some commands as root user, while preserving your own identity
 sudo su -
 
+ - Amazon Linux -
 sudo yum install docker - install docker
 sudo service docker start
   if: 'Redirecting to /bin/systemctl start docker.service'
@@ -21,4 +22,21 @@ sudo systemctl status docker.service
 sudo systemctl stop docker.service
 sudo yum remove docker
 sudo yum autoremove
+
+ - Ubuntu -
+cat /etc/os-release - show ubuntu version
+sudo apt update - download latest versions of programs
+sudo apt install apt-transport-https - ?
+sudo apt install docker - install docker
+sudo sustemctl status docker
+docker -v
+sudo usermod -aG docker $USER - to run 'docker' instead of 'sudo docker'
+exit
+  logout
+ifcofig - get ip address
+mkdir {folderName} - create foler
+cd {folderName} - go to folder
+nano Dockerfile - create ew file 'Dockerfile'
+echo 'Hello World from Docker!' > /var/www/html/index.html - copy sentence to file
+echo 'Hello 2' >> /var/www/html/index.html - add new row
 

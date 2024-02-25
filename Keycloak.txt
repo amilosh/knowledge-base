@@ -1,0 +1,6 @@
+docker run -p 8181:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.6 start-dev
+http://localhost:8181
+
+vjNNBPO5vHIM31VLvV6dsDNbvv6KcWmL
+
+http://localhost:8181/realms/poc-3-realm

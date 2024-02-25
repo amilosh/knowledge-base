@@ -1,0 +1,18 @@
+Main component - Cluster.
+Cluster consists of several Nodes (servers).
+Node types:
+  - worker node - for running containers
+  - master node - manages worker nodes
+All comads via CLI - on master node.
+
+Master ode:
+  kube-apiserver
+  kube-cotroller-manager
+  kube-scheduler
+Worer Node:
+  kubelet
+  kube-proxy
+
+ - Cluster -
+Master Mode
+Worker node (many)

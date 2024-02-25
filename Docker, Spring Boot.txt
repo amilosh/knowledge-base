@@ -3,7 +3,7 @@ Docker desktop version: https://docs.docker.com/desktop/release-notes/
 Docker engine version: 
   docker version
 
- - Dockerfile -
+ - Dockerfile ex. 1-
 FROM openjdk/node/python - pull image to our container
 WORKDIR /app - we define folder in image, where we will copy files from PC
   this case if we write COPY . . - we place files to 'app' folder in image
@@ -12,8 +12,26 @@ COPY . . - copy files from PC to image; image has folder structure as in windows
   second . - place all files to root of image
     COPY . /app - place all files to folder 'app' in image
 RUN npm install - inside image we do the same as in PC (when we build image))
-EXPOSE 3000 - which port application will use
+ENV PORT 4200 - rnvironment variable ith name 'PORT'
+EXPOSE $PORT - which port application will use
+VOLUME ["/app/data"] - create anonimous volume (will bw deleted after rm container)
 CMD ["node","app.js"] - array of commands (when we run image)
+
+ - Dockerfile ex.2 -
+FROM ubuntu:16.04 - pull/install ubuntu tocontainer
+RUN apt-get -y update - download latest versions
+RUN apt-get -y install apache2 - instal apache web server (apache httpd)
+RUN echo 'Hello World from Docker!' > /var/www/html/index.html - copy sentence to file
+CMD ["/usr/sbin/apache2ctl", "-D","FOREGROUND"] - run server on background
+EXPOSE 80
+
+  - Dockerfile ex.3 -
+FROM amazonlinux
+RUN yum -y update
+RUN yum -y install httpd
+RUN echo 'Hello World from Docker!' > /var/www/html/index.html
+CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+EXPOSE 80
 
  - Dockerfile - cache -
 When we generate new images we use the same artifacts in every build. Docker cahces these artifacts. We can reuse them.
@@ -31,6 +49,17 @@ We can define folders (from PC) which don't be included to image.
   Dockerfile
   .idea
 
+ - Dockerfile - Makefile -
+Make install windows.
+Create Makefile:
+run:
+  docker run --name app -d -p 8000:8080 -e USERNAME=USER app
+then: make run
+
+ - Dockerfile - environment variables -
+If we use many -e during 'run image' we can get variables from .env file.
+docker run --env-file ./props/.env
+
  - Dockerfile, image, container, run application -
 Generate app-0.0.1.jar file via Gradle.
 Create Dockerfile:
@@ -47,18 +76,24 @@ Create image:
       -t - tag or name of image (latest by default)
       . - build from current position (docker will automatically find and run Dockerfile)
 Run image:
-  docker run --name app -d -p 8000:8080 app
+  docker run --name app -d -p 8000:8080 -e USERNAME=USER app -v vol:/app/data
   where
     -d, dormant mode, run in the background
     -p - ports
     8000 - port on localhost
     8080 - post inside docker
+    -e - environment variable
     -it - go to container and show console from inside container
     -i, --interactive - go to container and show console from inside container 
     -t, --tty - 
     -d, --detach - run container and go back to cmd
     --name - name of the container
     --rm - container automatically well be removed after stop
+    --env-file - get environmet variables from .env file
+    vol:/app/data
+      vol - name of volume (will alive after rm container)
+      /app/data - folder from where we will get data and store to volume
+      (-v "C:\Users\johnDoe\project:/app" - mount volume from PC to docker volume)
 
 Create docker image by Spring Boot + Gradle:
   gradle bootBuildImage
@@ -70,6 +105,7 @@ Contains from layers - tree of images that or image depends on.
  - Commands -
 docker - list of commands
 docker version - version of docker engine
+docker search {name} - find image by name in docker hub
 docker images - list of images
 docker image ls - list of images
 docker container ls - list of contaiers
@@ -84,15 +120,17 @@ docker rm -f {containerId} - force close and remove container
 docker container prune - delete all not running containers
 docker image rm - remove image
 docker rmi {imageId} - delete image
-docker exec -it {containerId} bash - go inside container to bash console
+docker exec -it {containerId} bash / docker exec -it {containerId} /bin/bash - go inside container to bash console
   .exit - exit from cotainer, go back to PC
 docker pull abc123 - pull docker image from hub.docker, abc123 - artifact, e.g. postresql
 docker inspect abc123
   IPAddress
 docker image inspects {imageId}
+docker commit {containerId} {newImageName}:{newImageTag} - create image from container
+docker save {imageId}:{imageTag} > {fileName}.tar - save image as file
+docker load -i {fileName}.tar - unzip file to image
 
-
-Run PostgresSQL:
+ - Docker - PostgresSQL -
 docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=postgres -d -p 5432:5432 -v C:\postgres_volume:/var/lib/postgresql/data postgres:15.5
 
  - Docker + Sprig Boot + PostgreSQL -
@@ -109,7 +147,7 @@ add to application.properties:
 create Dockerfile
 create image (docker build -t app .)
 run container (docker run -d -p 8000:8080 app)
-c) spring + postgres by docer compose
+c) spring + postgres by docker compose
 create Dockerfile
 create docker-compose.yml:
 -
@@ -131,7 +169,7 @@ services:
     image: app
     container_name: app
     depends_on:
-      - postgres
+      - postgres # link to service
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
       - SPRING_DATASOURCE_USERNAME=postgres
@@ -146,7 +184,7 @@ spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
 spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
 -
 docker compose -f docker-compose.yaml pull
-docker compose -f docker-compose.yaml up -d
+docker compose -f docker-compose.yaml pull up -d
 
  - Docker hub -
 Push image to docker hub:
@@ -190,3 +228,10 @@ docker run --name app -d -p 80:8080 amilosh/app:latest
 go to EC2
   copy value from 'Public IPv4 DNS'
 http://ec2-51-20-42-196.eu-north-1.compute.amazonaws.com/hello
+
+ - AWS ECR -
+docker build -t denis:v1 .
+aws ecr get-login --no-include-email --region=ca-central-1 
+docker tag  denis:v1  12345678.dkr.ecr.ca-central-1.amazonaws.com/myrepo:latest
+docker push 12345678.dkr.ecr.ca-central-1.amazonaws.com/myrepo:lastest
+docker pull 12345678.dkr.ecr.ca-central-1.amazonaws.com/myrepo:latest
