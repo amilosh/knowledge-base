@@ -7,7 +7,8 @@
   +Part 5 | Security
   +Part 6 | Resilience4J Circuit Breaker
   +Part 7 | Distributed Tracing
-  -https://www.youtube.com/watch?v=-ebTPcHANnI&list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c&index=8
+  +Part 8 | Event Driven Architecture using Kafka
+  -https://www.youtube.com/watch?v=5_EXMJbhLY4&list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c&index=9
 https://www.youtube.com/watch?v=lL_j7ilk7rc
 https://github.com/sqshq/PiggyMetrics
 
