@@ -1,3 +1,5 @@
+ - Code exmples -> see 'samples/Java' - 
+
 Run java application:
   java -jar app.jar
 

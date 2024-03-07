@@ -25,6 +25,7 @@ https://www.youtube.com/@PhilipStarritt/videos
 https://www.youtube.com/@job4j/videos
 https://www.youtube.com/@IBSTrainingCenter/videos
 https://www.youtube.com/@CodingWorldWithNinja/videos
+https://www.youtube.com/@errorgrisha/videos
 
  - Sites -
 https://dev.to
@@ -64,6 +65,10 @@ https://proglib.io
 https://www.callicoder.com
 https://memorynotfound.com
 Aleksey Shipilëv - Алексей Шипилёв
+https://struchkov.dev/blog/ru/
+https://vas3k.blog
+https://develotters.com
+https://devtut.github.io
 
  - Sites, Coding -
 https://www.codewars.com
@@ -81,6 +86,7 @@ https://github.com/yegor256
 
  - Job -
 https://proxify.io
+https://pl.indeed.com
 
  - Useful links - 
 https://bootswatch.com - bootstrap templates

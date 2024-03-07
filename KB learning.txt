@@ -52,6 +52,9 @@ https://devby.io/news/amazon-zapustila-8-novyh-kursov-po-ii
  - Java Serializable - 
 https://javarush.com/groups/posts/1034-zachem-ispoljhzovatjh-serialversionuid-vnutri-serializable-klassa-v-java
 
+ - Java 8 -
+-https://habr.com/ru/articles/216431/ - API для работы с датами
+
  - Java 11 -
 https://dzone.com/articles/90-new-features-and-apis-in-jdk-11
 
@@ -73,3 +76,4 @@ https://thorben-janssen.com/youtube-channels-you-should-follow-in-2019/ - 14 You
  - Kubernetes -
 +https://www.youtube.com/watch?v=q_nj340pkQo&list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi // structure, advantages
 -https://www.youtube.com/watch?v=WAIrMmCQ3hE&list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi&index=2
+https://www.youtube.com/watch?v=Amkkr4_nsyc&list=PL3SzV1_k2H1VDePbSWUqERqlBXIk02wCQ&index=1
