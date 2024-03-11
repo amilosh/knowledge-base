@@ -8,7 +8,8 @@
   +Part 6 | Resilience4J Circuit Breaker
   +Part 7 | Distributed Tracing
   +Part 8 | Event Driven Architecture using Kafka
-  -https://www.youtube.com/watch?v=5_EXMJbhLY4&list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c&index=9
+  +Part 9 | Dockerize the application
+  -https://www.youtube.com/watch?v=5X3vKgwqolQ&list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c&index=10
 https://www.youtube.com/watch?v=lL_j7ilk7rc
 https://github.com/sqshq/PiggyMetrics
 
@@ -77,3 +78,6 @@ https://thorben-janssen.com/youtube-channels-you-should-follow-in-2019/ - 14 You
 +https://www.youtube.com/watch?v=q_nj340pkQo&list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi // structure, advantages
 -https://www.youtube.com/watch?v=WAIrMmCQ3hE&list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi&index=2
 https://www.youtube.com/watch?v=Amkkr4_nsyc&list=PL3SzV1_k2H1VDePbSWUqERqlBXIk02wCQ&index=1
+
+ - Kafka -
++https://www.youtube.com/watch?v=9FikRH8rXas

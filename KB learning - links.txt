@@ -26,6 +26,9 @@ https://www.youtube.com/@job4j/videos
 https://www.youtube.com/@IBSTrainingCenter/videos
 https://www.youtube.com/@CodingWorldWithNinja/videos
 https://www.youtube.com/@errorgrisha/videos
+https://www.youtube.com/@pavlenkoat/videos
+https://www.youtube.com/@ilyalisov/videos
+https://www.youtube.com/@NerzonIT/videos
 
  - Sites -
 https://dev.to
@@ -83,10 +86,19 @@ https://github.com/davidkiss
 https://github.com/tolis-e
 https://github.com/sqshq
 https://github.com/yegor256
+https://github.com/petrelevich - Otus teacher
 
  - Job -
 https://proxify.io
 https://pl.indeed.com
+https://justjoin.it
+https://www.pracuj.pl
+https://nofluffjobs.com/pl
+https://rocketjobs.pl
+https://www.praca.pl
+https://inhire.io
+https://www.skillshot.pl
+https://flagma.pl
 
  - Useful links - 
 https://bootswatch.com - bootstrap templates

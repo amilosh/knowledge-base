@@ -13,3 +13,5 @@ Add 'Enable annotation processor' in IDEA.
 @RequiredArgsConstructor
   creates constructor with all private final fields
   for @RestController and @Service
+
+@FieldDefaults(level = AccessLevel.PRIVATE) - make all fields private

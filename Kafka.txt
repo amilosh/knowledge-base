@@ -1,0 +1,21 @@
+We create topic.
+  Producer and consumer subscribes to topic.
+
+Topic has:
+  partition - stored opies of messages, need for parallelism and saving data
+    there is leader partition
+  replicationFactor
+
+If topic has only one partition, topic can have only one consumer.
+
+Topic can has:
+  many gropus (with consumers inside)
+
+Consumers are collected to groups.
+
+RabbitMQ - push type. Consumers subscribe to broker, when message is sent to broker, it immidiatelly pushes to consumer.
+Kafka - pull type. Consumers pull messages from broker.
+
+Messages are not deleted from queue.
+Offset - how many messages was read from queue.
+  We can read message many times.

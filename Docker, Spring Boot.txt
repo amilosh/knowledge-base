@@ -36,7 +36,8 @@ EXPOSE 80
   - Dockerfile ex.4, Java 17, Spring Boot, Maven -
 FROM openjdk:17
 EXPOSE 8080
-COPY ./target/*.jar app.jar
+ARG APP_JAR=./target/*.jar
+COPY ${APP_JAR} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
  - Dockerfile - cache -
