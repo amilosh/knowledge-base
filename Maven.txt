@@ -18,3 +18,6 @@ add docker compose to application:
     </plugin>
   </plugins>
 </build>
+
+https://www.baeldung.com/spring-rest-openapi-documentation
+  <executions> - ?

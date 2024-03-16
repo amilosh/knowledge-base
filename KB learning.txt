@@ -81,3 +81,6 @@ https://www.youtube.com/watch?v=Amkkr4_nsyc&list=PL3SzV1_k2H1VDePbSWUqERqlBXIk02
 
  - Kafka -
 +https://www.youtube.com/watch?v=9FikRH8rXas
+
+ - Swagger -
+-https://www.baeldung.com/spring-rest-openapi-documentation - see 'Swagger' manual
