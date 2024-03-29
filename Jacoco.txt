@@ -1,0 +1,24 @@
+plugins {
+    id 'jacoco'
+}
+
+Task: 
+  jacocoTestReport
+
+Default report file:
+  layout.buildDirectory.dir("reports/jacoco/test") // build/reports/jacoco/test/html/index.html
+
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacoco {
+    toolVersion = "0.8.11"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir') // custom report directory
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+(jacocoTestReport.dependsOn test)
+

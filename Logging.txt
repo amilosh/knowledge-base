@@ -1,0 +1,128 @@
+SLF4J - Simple Logging Facade for Java. This is iterface for other logger:
+java.util.logging - not used
+jakarta commons logging - not used
+slf4j-log4j12
+Log4j
+Logback
+
+
+ - Log4j -
+org.apache.logging.log4j.log4j-api
+org.apache.logging.log4j.log4j-core
+
+Appender - defines where we wont write logs to.
+  DailyRollingFileAppender - file
+  ConsoleAppender -console
+  JDBCAppender - db
+  TelnetAppender - TCP/IP
+  AsyncAppender - async logging
+
+a)
+org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(MainDemo.class);
+logger.info("Application has started on port = {}", port);
+b)
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+private static Logger logger = LogManager.getLogger(Log4jExample.class);
+logger.info("Info log message");
+logger.error("Error log message");
+
+1) Log4j.properties
+  log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender // CONSOLE - name of appender
+  log4j.appender.FILE=org.apache.log4j.RollingFileAppender // FILE - name of appender
+  log4j.rootLogger=DEBUG, CONSOLE, FILE // root logger, debug level, write to console and file
+  log4j.logger.pl.amilosh.service=TRACE, OWN, CONSOLE // loggin level for files from 'pl.amilosh.service' package
+# CONSOLE appender
+  log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+  log4j.appender.CONSOLE.threshold=DEBUG
+  log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+  log4j.appender.CONSOLE.layout.ConversionPattern=[%-5p] : %c:%L : %m%n
+# File appender customisation
+  log4j.appender.FILE=org.apache.log4j.RollingFileAppender
+  log4j.appender.FILE.File=./target/logging/logging.log
+  log4j.appender.FILE.MaxFileSize=1MB
+  log4j.appender.FILE.threshold=DEBUG
+  log4j.appender.FILE.MaxBackupIndex=2
+  log4j.appender.FILE.layout=org.apache.log4j.PatternLayout
+  log4j.appender.FILE.layout.ConversionPattern=[ %-5p] - %c:%L - %m%n
+
+2) log4j2.xml
+<Configuration status="debug" name="baeldung" packages="">
+    <Appenders>
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </Console>
+        <File name="fout" fileName="baeldung.log" append="true">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+</Configuration>
+<Loggers> 
+    <Root level="error">
+        <AppenderRef ref="STDOUT"/>
+        <AppenderRef ref="fout"/>
+    </Root>
+</Loggers>
+
+Asynchronous Logging - com.lmax:disruptor
+
+
+ - Logback -
+ch.qos.logback:logback-classic
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+private static Logger logger = LoggerFactory.getLogger(Log4jExample.class);
+logger.info("Info log message");
+
+<configuration>
+  # Console appender
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      # Pattern of log message for console appender
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
+    </layout>
+  </appender>
+
+  # File appender
+  <appender name="fout" class="ch.qos.logback.core.FileAppender">
+    <file>baeldung.log</file>
+    <append>false</append>
+    <encoder>
+      # Pattern of log message for file appender
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</pattern>
+    </encoder>
+  </appender>
+
+  # Override log level for specified package
+  <logger name="com.baeldung.log4j" level="TRACE"/>
+
+  <root level="INFO">
+    <appender-ref ref="stdout" />
+    <appender-ref ref="fout" />
+  </root>
+</configuration>
+
+
+ - Spring Boot -
+spring-boot-starter-web
+  depends on spring-boot-starter-logging -> spring-jcl
+
+If we use spring-boot-starter-web - Logback by default
+
+application.properties
+  logging.level.root=WARN
+  logging.level.pl.amilosh=TRACE
+
+logback-spring.xml / logback.xml
+  <logger name="org.springframework" level="INFO" />
+  <logger name="pl.amilosh" level="INFO" />
+
+
+- Logging
+logging.level.root=DEBUG - пишет подряд все логи, которые относятся к сприг бут
+logging.level.org.flywaydb=INFO - если указан определённый, то он перетирает рутовый
+Если мы используем spring-boot-starter-web то Спринг нам по дефолту предоставляет Logback.
+logback-spring.xml

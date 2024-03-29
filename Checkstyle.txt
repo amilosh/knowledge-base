@@ -1,0 +1,12 @@
+ - Spring Boot, Gradle -
+To integrate to Spring Boot with Gradle - see. 'Gradle, Spring Boot':' - Checkstyle -'
+
+Set max llenght to line:
+<module name="LineLength">
+  <property name="fileExtensions" value="java"/>
+  <property name="max" value="120"/>
+</module>
+
+<module name="MagicNumber">
+  <property name="ignoreAnnotation" value="true"/>
+</module>

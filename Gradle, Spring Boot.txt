@@ -30,6 +30,39 @@ Generate *.war file:
 Run application from *.jar file:
   java -jar app.jar
 
+
  - Gradle plugins -
 id 'application' - allow to specify main class of application
 gradle shadow plugin - add main class to manifest and to jar
+
+
+ - Checkstyle -
+plugins {
+    id 'checkstyle'
+}
+gradle checkstyleMain - check Java classes
+gradle checkstyleTest - run tests
+gradle check
+  includes gradle checkstyleMain
+  includes gradle checkstyleTest
+
+Checkstyle rules are placed in 'checkstyle.xml'.
+  Default package: {project_folder}\config\checkstyle\checkstyle.xml -> ${config_loc}
+  manually: 
+    checkstyle {
+      configFile rootProject.file("config/checkstyle/checkstyle.xml")
+    }
+  
+Download checkstyle.xml:
+  download latest version of checkstyle: https://github.com/checkstyle/checkstyle/releases/
+    open src/main/resources
+    copy google_checks.xml or sun_checks.xml to {project_folder}\config\checkstyle\checkstyle.xml
+
+Change in checkstyle.xml:
+  <module name="SuppressionFilter">
+      <property name="file" value="${config_loc}/suppressions.xml" />
+  </module>
+Create {project_folder}\config\checkstyle\suppressions.xml:
+  <suppressions>
+      <suppress checks="JavadocMethod"/>
+  </suppressions>

@@ -30,6 +30,7 @@ https://www.youtube.com/@pavlenkoat/videos
 https://www.youtube.com/@ilyalisov/videos
 https://www.youtube.com/@NerzonIT/videos
 https://www.youtube.com/@larchanka/videos
+https://www.youtube.com/@UlbiTV/videos
 
  - Sites -
 https://dev.to
@@ -73,6 +74,7 @@ https://struchkov.dev/blog/ru/
 https://vas3k.blog
 https://develotters.com
 https://devtut.github.io
+https://vc.ru/u/1194278-konstantin-mitin
 
  - Sites, Coding -
 https://www.codewars.com

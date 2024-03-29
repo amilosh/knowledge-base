@@ -40,3 +40,5 @@ nano Dockerfile - create ew file 'Dockerfile'
 echo 'Hello World from Docker!' > /var/www/html/index.html - copy sentence to file
 echo 'Hello 2' >> /var/www/html/index.html - add new row
 
+ - Commands -
+sudo systemctl status wildfly - check service status
