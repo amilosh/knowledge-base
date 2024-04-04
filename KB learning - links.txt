@@ -31,6 +31,7 @@ https://www.youtube.com/@ilyalisov/videos
 https://www.youtube.com/@NerzonIT/videos
 https://www.youtube.com/@larchanka/videos
 https://www.youtube.com/@UlbiTV/videos
+https://www.youtube.com/@freecodecamp/videos
 
  - Sites -
 https://dev.to
@@ -75,6 +76,7 @@ https://vas3k.blog
 https://develotters.com
 https://devtut.github.io
 https://vc.ru/u/1194278-konstantin-mitin
+https://softice.dev
 
  - Sites, Coding -
 https://www.codewars.com
