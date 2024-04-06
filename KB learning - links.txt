@@ -32,6 +32,14 @@ https://www.youtube.com/@NerzonIT/videos
 https://www.youtube.com/@larchanka/videos
 https://www.youtube.com/@UlbiTV/videos
 https://www.youtube.com/@freecodecamp/videos
+https://www.youtube.com/@azimutjava/videos
+https://www.youtube.com/@jusaf/videos
+https://www.youtube.com/@gooamoko/videos
+https://www.youtube.com/@stringconcat/videos
+https://www.youtube.com/@ABarmin/videos
+https://www.youtube.com/@yappidays2501/videos
+https://www.youtube.com/@IBSTrainingCenter/videos
+https://www.youtube.com/@ITentikaOnline/videos
 
  - Sites -
 https://dev.to
@@ -77,6 +85,7 @@ https://develotters.com
 https://devtut.github.io
 https://vc.ru/u/1194278-konstantin-mitin
 https://softice.dev
+https://medium.com/@ben.meehan_27368
 
  - Sites, Coding -
 https://www.codewars.com
