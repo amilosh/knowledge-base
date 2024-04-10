@@ -1,0 +1,3 @@
+ - Gmail smtp -
+Manage your Google Account -> Security -> How you sign in to Google -> 2-Step Verification: setup and tern on 2-Step Verification
+Security -> How you sign in to Google -> 2-Step Verification -> App passwords: add app and copy password

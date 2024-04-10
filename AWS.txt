@@ -11,3 +11,10 @@ ec2-user - default system user
  - Security groups -
 Inbound rules - port that open to internet
   Edit inbound rules -> set anywhere
+
+ - Simple Email Service (SES) -
+Amazon SES -> Identities -> Create Idetity -> Email address -> Create Identity
+Read articles: 
+https://docs.aws.amazon.com/ses/latest/dg/send-an-email-using-sdk-programmatically.html
+https://docs.aws.amazon.com/ses/latest/dg/create-shared-credentials-file.html
+In 'sandbox' status you can send emails to verified emails only.
