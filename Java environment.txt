@@ -1,0 +1,7 @@
+Java - high-level programming language.
+Java - class-based programming language.
+Java - object-oriented programming language.
+Java - строго типизированный programming language.
+
+Write once, run anywhere (WORA) - compiled Java code can run on all platforms with Java.
+Java code is compiled to ?bytecode -> run on Java virtual machine (regardless computer architecture).
