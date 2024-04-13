@@ -4,4 +4,187 @@ Java - object-oriented programming language.
 Java - строго типизированный programming language.
 
 Write once, run anywhere (WORA) - compiled Java code can run on all platforms with Java.
-Java code is compiled to ?bytecode -> run on Java virtual machine (regardless computer architecture).
+Java code -> is compiled to bytecode -> bytecode is iterpreted by JVM.
+
+Java was released in May 1995 by Sun Microsystem. Referece implementation - Sun Microsystem Java Platform.
+
+ - Java implementations -
+OpenJDK - reference implemetation of Java Platform (free and open-source).
+  includes: virtual machine, java class library, compiler (javac)
+Now Oracle doesn't release JDKs under a permissive license.
+Other implementations:
+AdoptOpenJDK/Eclipse Temurin - Adoptium
+Azul Zulu - Azul Systems
+IBM Semeru Runtime Open Edition - IBM
+Microsoft Build of OpenJDK - Microsoft
+Oracle OpenJDK - Oracle
+Red Hat build of OpenJDK - Red Hat
+
+ - Java Community Process (JCP) -
+Mechanism allowing anyone to take part in proposing and developing of Java.
+Members creates Java Specification Requests (JSRs).
+
+ - Java Specification Requests (JSRs) -
+Java Specification Request (JSR) - document with proposed specificarions and technologies for adding to Java platform.
+Final JSR provides a reference implementation that is a free implementation of the technology in source code form and a Technology Compatibility Kit to verify the API specification.
+List of JSRs: https://en.wikipedia.org/wiki/Java_Community_Process#List_of_JSRs
+
+ - Version history - 
+JDK 1.0 - January 23, 1996
+JDK 1.1 on February 19, 1997
+  AWT, evet model, iner classes, JavaBeans, JDBC
+J2SE - December 8, 1998
+  reflection, a collections framework,  Swing
+J2SE 1.3 - May 8, 2000
+  HotSpot JVM, JavaSound, JNDI, JPDA
+J2SE 1.4 - February 6, 2002
+  regular expressions, exception chaining, XML parser and XSLT processor (JAXP), Java Web Start
+J2SE 5.0/Java SE 5 - September 30, 2004
+  for-each loop, generics, autoboxing and var-args, enums
+Java SE 6 - December 11, 2006
+  annotations, GUI improvements, improvements to the Java Platform Debugger Architecture (JPDA) & JVM Tool Interface
+Java SE 7 - July 28, 2011
+  strings in switch, try-with-resources, generic instance creation, join/fork framework, I/O library
+Java SE 8 - March 18, 2014 - LTS
+  lambda expressions, default methods, Date and Time API inspired by Joda Time
+Java SE 11 - September 25, 2018 - LTS
+  WebSocket support
+Java SE 17 - September 14, 2021 - LTS
+Java SE 21 - September 19, 2023 - LTS
+
+
+ - Java Platform, Standard Edition -
+Java Platform, Standard Edition / Java SE / J2SE
+Contains general purposes APIs
+java.lang
+  Object, Enum, Class, Exception, String etc.
+java.lang.ref
+  for garbage collector
+java.lang.reflect
+  reflection
+java.io
+  input/output functionality
+java.nio
+  Non-blocking I/O
+java.math
+  mathematical opearations
+java.net
+  networks, http
+java.text
+  text parsing
+java.util
+  collections, concurrent, regex, stream etc.
+java.applet
+java.beans
+java.awt
+java.rmi
+java.security
+java.sql
+javax.rmi
+javax.swing
+javax.swing.text.html.parser
+javax.xml.bind.annotation
+
+ - Java Platform, Enterprise Edition -
+Java Platform, Enterprise Edition (Java EE) / Java 2 Platform, Enterprise Edition (J2EE) / Jakarta EE
+Set of secifications for disctributed computig and web services.
+Jakarta EE applications are run on servers, which handle transactions, security, scalability, concurrency and management of the components they are deploying.
+Usage: e-commerce, accounting, banking information systems.
+On September 12, 2017 gave Java EE to Eclipse Foudation. EF renamed Java EE to Jakarta EE (because of Java trademark).
+History:
+J2EE 1.2 - 1999-12-17
+  Initial specification release
+Java EE 5 - 2006-05-11
+  Java annotations
+Java EE 7 - 2013-05-28
+  WebSocket, JSON and HTML5 support
+Java EE 8 - 2017-08-31
+  HTTP/2 and CDI based Security
+Jakarta EE 8 - 2019-09-10
+  Full compatibility with Java EE 8
+Jakarta EE 9 - 2020-12-08
+  API namespace move from javax to jakarta
+Jakarta EE 11 - 2024
+  JDK 21 support
+ - Secifications:
+  Jakarta Servlet
+  Jakarta WebSocket
+  Jakarta Faces
+  Jakarta Server Pages (JSP)
+  Jakarta Expression Language
+  Jakarta RESTful Web Services
+  Jakarta JSON Processing
+  Jakarta JSON Binding
+  Jakarta XML Binding
+  Jakarta XML Web Services
+  Jakarta Activation (JAF)
+  Jakarta Contexts and Dependency Injection (CDI)
+  Jakarta Enterprise Beans (EJB)
+  Jakarta Persistence (JPA)
+  Jakarta Transactions (JTA)
+  Jakarta Messaging (JMS)
+  Bean Validation API
+  Jakarta Batch
+  Jakarta Connectors
+Profiles:
+  Platform
+  Web Profile
+  Core Profile
+Certified referencing runtimes (application web servers):
+  free:
+    GlassFish - Eclipse
+    JBoss - Red Hat
+    WildFly - Red Hat
+    Apache Geronimo - Apache
+    TomEE - Apache
+    Payara Server - Payara Services Limited
+  proprietary
+    WebSphere - IBM
+    Oracle WebLogic Server - Oracle
+Servlet cotainers:
+  Apache Tomcat - Apache
+  Jetty - Eclipse
+ 
+  
+ - Apache Tomcat -
+Servlet container (HTTP web server).
+  It uses as servlet container in JBoss and GlassFish application servers.
+Includes:
+  Jakarta Servlet
+  Jakarta Expression Language
+  WebSocket
+  JavaServer Pages (JSP)
+  JavaServer Faces (JSF)
+Components:
+  Catalina - servlet container (servlets + JSP)
+  Coyote - an HTTP connector (listen requests on specific TCP, redirects to Tomcat Emgine, sed back response to client)
+  Jasper - JSP Engine (parses JSP files to compile them into Java code as servlets)
+  Cluster - used for load balancing
+
+ - Jetty -
+Servlet container
+Used for machine to machine communications, usually within larger software frameworks.
+Support the same technologies as Apache Tomcat
+
+ - GlassFish -
+Application server. Reference implementation of Jakarta EE.
+Powered by: Sun Microsytems -> Oracle -> Eclipse + OmniFish, Fujitsu and Payara
+Contains:
+  Jakarta
+    REST
+    CDI
+    Security
+    Persistence
+    Transactions
+    Servlet
+    Faces
+    Messaging
+    etc.
+  TopLink persistence system
+  Apache Tomcat as the servlet container
+  Grizzly which uses Java non-blocking I/O (NIO) for scalability and speed
+
+
+ - RESTful Web Services -
+Jersey / Glassfish Jersey by Oracle and Eclipse - open source framework for developing RESTful Web Services in Java.
+  JAX-RS (JSR 311, 339, 370) reference implementation.
