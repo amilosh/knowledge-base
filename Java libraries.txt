@@ -15,3 +15,7 @@ Create new Array List, new Set, new Collection etc.:
     com.google.common:google-collect
     import com.google.common.collect.Lists;
     Lists.newArrayList(User.builder().build());
+
+Get first and last elements in collection:
+    com.google.common.collect.Iterables.getFirst;
+    com.google.common.collect.Iterables.getLast;
