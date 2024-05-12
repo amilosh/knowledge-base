@@ -1,0 +1,22 @@
+https://azure.microsoft.com
+https://portal.azure.com/#home
+
+ - Azure Active Directory / Azure Entra ID -
+Create new Directory.
+  Create a resource -> Identity -> Microsoft Entra ID (Create)
+App registrations.
+  New regitration
+    Accounts in this organizational directory only (softeq-ipd only - Single tenant)
+  Add client secret
+  Authentication
+    Select only: ID tokens (used for implicit and hybrid flows)
+
+Open AD.
+  Users -> New user
+
+Assign roles.
+  App registrations.
+
+Add enterprise application.
+  Assign user to enterprise application.
+  Select user and reset password.
