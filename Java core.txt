@@ -8,3 +8,11 @@ Unpack jar file:
     MANIFEST.MF have to contain name of main class
       Maifest-Version: 1.0
       Main-Class: pl.amilosh.Main
+
+ - Java 17 -
+Record - for DTO objects. Record is final; fields are final (no set() methods). ToString implemented.
+Sealed types. Maybe interface or class. Bottom clas: final or non-sealed. sealed interface Bird permits Duck, Penguin
+Patterm 'Matching for instanceOf'. bird instanceof Mallard mallard. Scope - inside if() {...}
+Switch expressions. Switch can return value.
+Helpful NullPointerException.
+Text blocks. """ ... """

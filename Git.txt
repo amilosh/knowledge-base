@@ -1,10 +1,84 @@
-git clone https://github.com/username/app.git - clone repository from github to local PC
+ - git config -
+git config - list of commands for config
+  global configs are stored in: C:\Users\username\.gitconfig
+  local configs are stored in: project_folder\.git\config
+get global config values:
+  git config --global user.name
+  git config --global user.email
+  git config --global color.ui
+get local config values:
+  go to project_folder
+    git config --local user.name
+    git config --global user.email
+    git config --global color.ui
+set local config values:
+  go to project_folder
+    git config --local user.name "Alexander Milosh"
+    git config --global user.email "milosh.alexander.by@gmail.com"
+    git config --global color.ui true
 
 Set email to project's git
-~projectFolder/.git.config
+~projectFolder/.git/config
   [user]
       email = john.doe@gmail.com
       name = John Doe
+
+
+ - repositories -
+git init - create local repository
+git remote add <remote repository name> <remote repository URL>
+git clone <remote repository URL> - clone repository from github to local PC
+  <remote repository name> - example: origin
+  <remote repository URL> - example: https://github.com/username/app.git
+git push <remote repository name> <branch name> - send local changes to remote repository
+git pull <remote repository name> <branch name> - get code from remote repository to local repository
+  contains git fetch - ?
+
+
+ - branches -
+git branch - list of branches
+  git branch -a - list of branches
+git branch <branch_name> - create new branch
+git branch <branch_name> <commit> - create new branch from commit
+git checkout <branch_name> - move to branch
+  git checkout -b <branch_name> - create and move to new branch
+  git checkout -b <branch_name> <from_branch> - create and move to new branch from old branch
+git branch -d <branch_name> - delete branch
+git branch --merged - list of branches that wa merged to current branch
+git branch -m <old_branch_name> <new_branch_name> - rename branch
+git stash - save changes without commit
+  git stash apply - return changes
+git checkout master
+  git merge feature - merge from feature to master
+  git merge --no-ff - (no fast-forward) - ?
+    (fast-forward merge) - by default
+git merge --abort - cancel merge
+git checkout master
+  git rebase feature - move feature branch to the end of master branch
+    (if conflict) - resolve
+      git add 
+      git rebase --continue
+git checkout master
+  git cherry-pick abc123 - move commit abc123 to branch master
+
+
+ - changes -
+Git index (staging area) - area where git stores files before adding to commit
+  add file to index: git add <file/folder name>
+git status - status/info about files (already commited or not)
+git add <file/folder name> - add file to index:
+  git add . - add all files from current folder including subfolder
+git commit - m "Commit name" - create commit
+git log - list of comits in local repository
+git checkout <hash-code of commit> - move to code state for this commit
+git revert HEAD - revert changes from last commit with creating new commit
+  git revert <commit hash> - the same
+git commit --amend - add changes to the lat commit
+git rebase -i HEAD~<n> - squash n latest commits
+git reset --hard HEAD~1 - delete latest commit
+  git reset --hard <commit hash> - deleate commites before <commit hash>, files - delete
+  git reset --soft <commit hash> - deleate commites before <commit hash>, files - no delete - plase to index git
+
 
  - tag -
 Understanding. Your code is stored in brancher. If you create new commit you cannot build application from old code.

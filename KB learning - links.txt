@@ -2,6 +2,13 @@
 https://otus.ru
 https://slurm.io
 https://job4j.ru/index.html
+https://www.coursera.org
+https://www.udemy.com
+https://www.linkedin.com/learning
+https://www.udacity.com
+https://www.pluralsight.com
+https://www.codecademy.com
+https://practicum.yandex.ru
 
  - Youtube -
 https://www.youtube.com/@otus_education/videos
@@ -11,7 +18,7 @@ https://www.youtube.com/@avecoder/playlists
 https://www.youtube.com/@EmbarkX/videos
 https://www.youtube.com/@itdog/videos
 https://www.youtube.com/@DailyCodeBuffer/videos
-https://www.youtube.com/@shurik_codes/videos
+https://www.youtube.com/@shurik_codes/videos - Уголок сельского джависта
 https://www.youtube.com/@visualcomputerscience/videos
 https://www.youtube.com/@CodeVice111/videos
 https://www.youtube.com/@fakng-engineer/videos
@@ -40,6 +47,8 @@ https://www.youtube.com/@ABarmin/videos
 https://www.youtube.com/@yappidays2501/videos
 https://www.youtube.com/@IBSTrainingCenter/videos
 https://www.youtube.com/@ITentikaOnline/videos
+https://www.youtube.com/@amplicode/videos
+https://www.youtube.com/cs50/videos - Harvard University's programm of computer scince
 
  - Sites -
 https://dev.to

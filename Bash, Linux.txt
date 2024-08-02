@@ -28,6 +28,7 @@ cat /etc/os-release - show ubuntu version
 sudo apt update - download latest versions of programs
 sudo apt install apt-transport-https - ?
 sudo apt install docker - install docker
+apt update && apt install -y zip unzip curl
 sudo sustemctl status docker
 docker -v
 sudo usermod -aG docker $USER - to run 'docker' instead of 'sudo docker'

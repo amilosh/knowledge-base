@@ -113,6 +113,7 @@ Contains from layers - tree of images that or image depends on.
 docker - list of commands
 docker version - version of docker engine
 docker search {name} - find image by name in docker hub
+docker ppull {name} - downlod image from docker hub
 docker images - list of images
 docker image ls - list of images
 docker container ls - list of contaiers
