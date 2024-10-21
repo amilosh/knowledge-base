@@ -68,21 +68,26 @@ routing key - only one for one message
 delivery_mode - 
 headers - 
 
- - Consumer -
+ - Consumer / Listener) -
 Describes on one queue only.
 Queue send message to Consumer via push-model, without scheduling, delaying.
 Prefetch count - how many messages Consumer can process at the same time. If 0 - receives all. If 1 - receives one, processes it and then receives second. (if multithreading - set number of threads)
 Acknowledge (ack) and Negative acknowledge (nack) - Consumer approves (or not) theat mesage was precessed ad response to Queue.
 AutoAck - auto acknowledge for all mesages.
+If there are several listeners for the same queue, messages will be listen by random listener (by first free listener).
+  In order to every listener recieve the same message: create exchange, bind queues to this exchange, each queue for each listener.
 
  - FIFO -
 Set prefetch_count=1. First message from Queue goes to Consumer. Consumer precessec this message. Consumer send ack to Queue. Queue send the second message to Consumer.
-We can set two consumers for one Queue. 
+We can set two consumers for one Queue.
 
 
 docker run -d --name rabbitmq-poc -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+docker run -d --name rabbitmq-sample -p 5672:5672 -p 15672:15672 -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin rabbitmq:3.13-management
   http://localhost:15672/#/
+  http://localhost:15672/
   default user: guest/guest
+    custom user: admin/admin
 
 implementation 'org.springframework.boot:spring-boot-starter-amqp'
 implementation 'org.springframework.amqp:spring-rabbit:3.1.1'

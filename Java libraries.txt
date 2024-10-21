@@ -12,9 +12,10 @@ Compare two collections (check if elements are the same):
     CollectionUtils.isEqualCollection(list1, list2)
 
 Create new Array List, new Set, new Collection etc.:
-    com.google.common:google-collect
-    import com.google.common.collect.Lists;
-    Lists.newArrayList(User.builder().build());
+    com.google.common:google-collect - deprecated
+      import com.google.common.collect.Lists;
+      Lists.newArrayList(User.builder().build());
+    implementation 'com.google.guava:guava:33.2.1-jre'
 
 Get first and last elements in collection:
     com.google.common.collect.Iterables.getFirst;

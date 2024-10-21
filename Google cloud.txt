@@ -1,0 +1,35 @@
+ - Google cloud console -
+https://console.cloud.google.com
+
+ - Create new Project (1):
+1)
+In the Google Cloud console, go to Menu menu > IAM & Admin
+  or
+https://console.cloud.google.com/iam-admin/iam?project=ems-amilosh
+  or
+https://console.cloud.google.com/projectselector2/welcome?project=_&supportedpurview=project,organizationId,folder
+2)
+Click on Select a project -> NEW PROJECT
+enter name and create
+3)
+Go to 
+https://console.cloud.google.com/welcome?project=faang-school&supportedpurview=project
+
+ - Google Calendar API (2):
+1)
+Go to Project created in (1)
+https://console.cloud.google.com/welcome?project=faang-school&supportedpurview=project
+2)
+Click on APIs & Services
+3)
+Click on '+ENABLE APIS AND SERVICES'
+found 'Google Calendar'
+Enable
+https://console.cloud.google.com/apis/api/calendar-json.googleapis.com/metrics?orgonly=true&project=faang-school&supportedpurview=organizationId
+4)
+Create credentials:
+What data will you be accessing? *
+  Application data
+    create service account: faang-school-service-account
+      Grant this service account access to project (optional) - do nothing
+      Grant users access to this service account (optional) - do nothing

@@ -33,6 +33,7 @@ git clone <remote repository URL> - clone repository from github to local PC
 git push <remote repository name> <branch name> - send local changes to remote repository
 git pull <remote repository name> <branch name> - get code from remote repository to local repository
   contains git fetch - ?
+fetch all - get all changes from remote repository to local repository
 
 
  - branches -
@@ -56,7 +57,7 @@ git merge --abort - cancel merge
 git checkout master
   git rebase feature - move feature branch to the end of master branch
     (if conflict) - resolve
-      git add 
+      git add
       git rebase --continue
 git checkout master
   git cherry-pick abc123 - move commit abc123 to branch master
@@ -92,3 +93,11 @@ git tag --delete {tagName} - delete tag from local git
 git ls-remote --tags origin - list tags from remote repository
 
 git log -{n} - show n latest commits
+
+
+ - ItelliJ IDEA -
+open project from GitHub in IDEA:
+  create rpository -> copy URL -> IDEA: Get from VCS
+push local rpository to GitHub:
+  VCS -> Enable Version Control Integration -> Git
+  Git -> GitHub -> Share Project On GitHub

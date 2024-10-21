@@ -1,0 +1,22 @@
+Identification
+Authentication
+  Basic
+Authorization
+  Role based
+  Access based
+
+Authentication realized via filters
+
+ - Basic authentication -
+Browser keeps creads in cache.
+  To clean cache:
+    close browser
+    server response 401
+    clear cache manually in browser
+
+ - -
+.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) - server will not crate session for user inside application. Spring Security doesn't keep iformation about user session in server. ach request have to have authentiation creds, in order to server know about user state.
+  STATELESS - server doesn't know about session; need Authorization header
+  ALWAYS - session is always created, even if it is not in use.
+  NEVER - spring security does not create sessions, but uses an existing session if there is one.
+  IF_REQUIRED - creates a session only if necessary (default value).

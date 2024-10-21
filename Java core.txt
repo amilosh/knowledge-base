@@ -16,3 +16,9 @@ Patterm 'Matching for instanceOf'. bird instanceof Mallard mallard. Scope - insi
 Switch expressions. Switch can return value.
 Helpful NullPointerException.
 Text blocks. """ ... """
+
+ - HashMap -
+Group objects by parameter. List<User> -> Map<Age, List<Users>>
+Find matching by parameter. Map<Parameter, User> -> User - calculate parameter > find mathced user from Map by parameter
+Cashing. Insted of get info from DB - application gets info from Map (cache) (from memory)
+Indexing. If we have large List, in order to find object we need to iterate over all elements. In Map we can create index and get object by index.
