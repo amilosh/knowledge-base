@@ -1,3 +1,61 @@
+ - Install and run Kafka -
+Download from https://kafka.apache.org/downloads
+  Scala 2.13  - kafka_2.13-3.9.0.tgz (asc, sha512)
+folders:
+  C:\programs\kafka\kafka_2.13-3.9.0\config\kraft
+    broker.properties - run as broker only
+    controller.properties - run as manager only
+    server.properties - run as broker and controller
+a) generate ID for Kafka cluster
+  C:\programs\kafka\kafka_2.13-3.9.0\bin\windows\kafka-storage.bat random-uuid 
+    -> gMRa6JVIQAGTRBxfALiUIg
+b) format log to work with KRaft
+  kafka-storage.bat format -t gMRa6JVIQAGTRBxfALiUIg -c C:\programs\kafka\config\kraft\server.properties
+    -> Formatting metadata directory /tmp/kraft-combined-logs with metadata.version 3.9-IV0.
+c) run Kafka with default config
+  kafka-server-start.bat C:\programs\kafka\config\kraft\server.properties
+
+ - Run Kafka cluster with several servers -
+a) make 3 copies of C:\programs\kafka\config\kraft\server.properties
+  server-1.properties
+  server-2.properties
+  server-3.properties
+b) change the following for each server:
+  node.id
+  listeners=PLAINTEXT://:9092,CONTROLLER://:9093  (PLAINTEXT - port for broker; CONTROLLER - port for controller)
+  controller.quorum.voters=1@localhost:9093 change to controller.quorum.voters=1@localhost:9093,2@localhost:9095,3@localhost:9097
+  advertised.listeners=PLAINTEXT://localhost:9092,CONTROLLER://localhost:9093
+  log.dirs=/tmp/kraft-combined-logs change to log.dirs=/tmp/server-1/kraft-combined-logs
+c) run three times in three different cmd windows
+  kafka-storage.bat format -t gMRa6JVIQAGTRBxfALiUIg -c C:\programs\kafka\config\kraft\server-1.properties
+  kafka-server-start.bat C:\programs\kafka\config\kraft\server-1.properties
+d) stop servers
+  stor producers and consumers
+  kafka-server-stop.bat
+
+ - CLI - create topic, list, description, delete -
+kafka-topics.bat --create --topic payment-created-events-topic --partitions 3 --replication-factor 3 --bootstrap-server localhost:9092,localhost:9094,localhost:9096
+kafka-topics.bat --list --bootstrap-server localhost:9092,localhost:9094,localhost:9096
+kafka-topics.bat --describe --bootstrap-server localhost:9092,localhost:9094,localhost:9096
+kafka-topics.bat --delete --topic payment-created-events-topic --bootstrap-server localhost:9092 (there is a bug in windows)
+  (delete.topic.enable=true should be ticked)
+
+ - CLI - producer -
+a)
+kafka-console-producer.bat --bootstrap-server localhost:9092,localhost:9094,localhost:9096 --topic t1
+(if auto.create.topics.enable=true - first meage - error + create new topic)
+b) end with key to particular partition
+kafka-console-producer.bat --bootstrap-server localhost:9092,localhost:9094,localhost:9096 --topic t1 --property "parse.key=true" --property "key.separator=:"
+
+ - CLI - cconsumer -
+a)
+kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094,localhost:9096 --topic t1 --from-beginning
+b)
+kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094,localhost:9096 --topic t1 --property "print.key=true"
+  (--property "print.value=false")
+  (--from-beginning)
+
+
 We create topic.
   Producer and consumer subscribes to topic.
 
