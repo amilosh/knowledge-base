@@ -62,6 +62,14 @@ git checkout master
 git checkout master
   git cherry-pick abc123 - move commit abc123 to branch master
 
+ - rename branch -
+git fetch origin
+git branch -v -a - show all remote branches
+git pull old_branch_name
+git branch -m old_branch_name new_branch_name
+git push origin new_branch_name
+git branch --set-upstream-to=origin/new_branch_name
+git push origin --delete old_branch_names
 
  - changes -
 Git index (staging area) - area where git stores files before adding to commit
