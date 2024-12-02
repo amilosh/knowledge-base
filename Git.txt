@@ -61,11 +61,13 @@ git checkout master
       git rebase --continue
 git checkout master
   git cherry-pick abc123 - move commit abc123 to branch master
+git branch -vv - show upstream with remote branch
 
  - rename branch -
 git fetch origin
 git branch -v -a - show all remote branches
 git pull old_branch_name
+git branch --unset-upstream old_branch_name - close upstream with remote branch
 git branch -m old_branch_name new_branch_name
 git push origin new_branch_name
 git branch --set-upstream-to=origin/new_branch_name
