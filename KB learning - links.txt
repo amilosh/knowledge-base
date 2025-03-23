@@ -49,6 +49,8 @@ https://www.youtube.com/@IBSTrainingCenter/videos
 https://www.youtube.com/@ITentikaOnline/videos
 https://www.youtube.com/@amplicode/videos
 https://www.youtube.com/cs50/videos - Harvard University's programm of computer scince
+https://www.youtube.com/@it-father
+https://www.youtube.com/@yegor256
 
  - Sites -
 https://dev.to
@@ -110,6 +112,8 @@ https://github.com/tolis-e
 https://github.com/sqshq
 https://github.com/yegor256
 https://github.com/petrelevich - Otus teacher
+https://github.com/Daniil-Vl
+https://github.com/20cognosce
 
  - Job -
 https://proxify.io
@@ -122,6 +126,7 @@ https://www.praca.pl
 https://inhire.io
 https://www.skillshot.pl
 https://flagma.pl
+https://theprotocol.it
 
  - Useful links - 
 https://bootswatch.com - bootstrap templates
